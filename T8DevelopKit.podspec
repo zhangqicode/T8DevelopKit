@@ -103,7 +103,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "MBProgressHUD" do |ss|
-    ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h.m}"
+    ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h,m}"
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
