@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "T8HudHelper.h"
 
 @interface ViewController ()
+
+@property (nonatomic) UIButton *testButton;
 
 @end
 
@@ -16,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.testButton.frame = CGRectMake(100, 100, 100, 100);
+    self.testButton.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:self.testButton];
 
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -23,6 +30,20 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIButton *)testButton
+{
+    if (!_testButton) {
+        _testButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        [_testButton addTarget:self action:@selector(testButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _testButton;
+}
+
+- (void)testButtonPressed
+{
+    [T8HudHelper showHUDMessage:@"111"];
 }
 
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9911B254C0300588FDF /* MBProgressHUD.m */; };
+		6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9931B254C0300588FDF /* T8HudHelper.m */; };
 		6DC3965D1B1C823500270D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965C1B1C823500270D0D /* main.m */; };
 		6DC396601B1C823500270D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965F1B1C823500270D0D /* AppDelegate.m */; };
 		6DC396631B1C823500270D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC396621B1C823500270D0D /* ViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D25D9901B254C0300588FDF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6D25D9911B254C0300588FDF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6D25D9921B254C0300588FDF /* T8HudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8HudHelper.h; sourceTree = "<group>"; };
+		6D25D9931B254C0300588FDF /* T8HudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8HudHelper.m; sourceTree = "<group>"; };
 		6DC396571B1C823500270D0D /* T8DevelopKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T8DevelopKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC3965B1B1C823500270D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC3965C1B1C823500270D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +95,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D25D98F1B254C0300588FDF /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6D25D9901B254C0300588FDF /* MBProgressHUD.h */,
+				6D25D9911B254C0300588FDF /* MBProgressHUD.m */,
+				6D25D9921B254C0300588FDF /* T8HudHelper.h */,
+				6D25D9931B254C0300588FDF /* T8HudHelper.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		6DC3964E1B1C823500270D0D = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +171,7 @@
 			children = (
 				6DC396A91B1C849B00270D0D /* T8DevelopKit.h */,
 				6DC396991B1C82EA00270D0D /* T8Defines.h */,
+				6D25D98F1B254C0300588FDF /* MBProgressHUD */,
 				6DC396811B1C82EA00270D0D /* Assistant&Helper */,
 				6DC396841B1C82EA00270D0D /* Category */,
 			);
@@ -302,6 +320,8 @@
 				6DC396A01B1C82EA00270D0D /* NSString+T8.m in Sources */,
 				6DC3969B1B1C82EA00270D0D /* NSDate+T8.m in Sources */,
 				6DC3965D1B1C823500270D0D /* main.m in Sources */,
+				6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */,
+				6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */,
 				6DC3969D1B1C82EA00270D0D /* NSDictionary+T8.m in Sources */,
 				6DC3969A1B1C82EA00270D0D /* T8JsonHelper.m in Sources */,
 				6DC396A71B1C83EF00270D0D /* T8SandBoxHelper.m in Sources */,
@@ -495,6 +515,7 @@
 				6DC3967C1B1C823500270D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DC3967D1B1C823500270D0D /* Build configuration list for PBXNativeTarget "T8DevelopKitDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +524,7 @@
 				6DC3967F1B1C823500270D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
