@@ -102,6 +102,10 @@ Pod::Spec.new do |s|
     ss.source_files = "T8DevelopKit/Category/*.{h,m}"
   end
 
+  s.subspec "MBProgressHUD" do |ss|
+    ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h.m}"
+  end
+
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
