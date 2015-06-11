@@ -87,6 +87,8 @@ DEF_SINGLETON(T8CameraHelper)
         sourceType = UIImagePickerControllerSourceTypeCamera;
     }else if (buttonIndex == 1){
         sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }else{
+        return;
     }
     
     [self showPickerViewControllerSourceType:sourceType onViewController:self.parentVC compled:self.didFinishTakeMediaCompled];
