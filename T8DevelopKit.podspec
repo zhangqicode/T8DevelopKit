@@ -106,6 +106,10 @@ Pod::Spec.new do |s|
     ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h,m}"
   end
 
+  s.subspec "UIMenuTableViewController" do |ss|
+    ss.source_files = "T8DevelopKit/UIMenuTableViewController/*.{h,m}"
+  end
+
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
