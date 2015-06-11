@@ -8,23 +8,36 @@
 
 #import "T8CameraHelper.h"
 
-@interface T8CameraHelper () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface T8CameraHelper () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, copy) DidFinishTakeMediaCompledBlock didFinishTakeMediaCompled;
+@property (nonatomic, strong) UIViewController *parentVC;
 
 @end
 
 @implementation T8CameraHelper
 
+DEF_SINGLETON(T8CameraHelper)
+
 - (instancetype)init {
     self = [super init];
     if (self) {
+        
     }
     return self;
 }
 
 - (void)dealloc {
     self.didFinishTakeMediaCompled = nil;
+}
+
+- (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled
+{
+    self.didFinishTakeMediaCompled = [compled copy];
+    self.parentVC = viewController;
+    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相机", @"相册", nil];
+    [action showInView:self.parentVC.view];
 }
 
 - (void)showPickerViewControllerSourceType:(UIImagePickerControllerSourceType)sourceType onViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled {
@@ -64,6 +77,20 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissPickerViewController:picker];
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if (buttonIndex == 0) {
+        sourceType = UIImagePickerControllerSourceTypeCamera;
+    }else if (buttonIndex == 1){
+        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self showPickerViewControllerSourceType:sourceType onViewController:self.parentVC compled:self.didFinishTakeMediaCompled];
+    self.parentVC = nil;
 }
 
 @end

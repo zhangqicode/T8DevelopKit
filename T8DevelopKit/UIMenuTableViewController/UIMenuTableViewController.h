@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIMenuTableViewController : UITableViewController
+@interface UIMenuTableViewController : UIViewController
+
+@property (nonatomic,strong) UITableView *tableView;
+
 
 @end
