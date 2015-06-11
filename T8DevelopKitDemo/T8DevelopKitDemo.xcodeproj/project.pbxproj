@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9911B254C0300588FDF /* MBProgressHUD.m */; };
 		6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9931B254C0300588FDF /* T8HudHelper.m */; };
+		6DA0CB041B295E0700C4C2E7 /* UIMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB031B295E0700C4C2E7 /* UIMenuTableViewController.m */; };
+		6DA0CB071B298D9600C4C2E7 /* T8CameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */; };
 		6DC3965D1B1C823500270D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965C1B1C823500270D0D /* main.m */; };
 		6DC396601B1C823500270D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965F1B1C823500270D0D /* AppDelegate.m */; };
 		6DC396631B1C823500270D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC396621B1C823500270D0D /* ViewController.m */; };
@@ -42,6 +44,10 @@
 		6D25D9911B254C0300588FDF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6D25D9921B254C0300588FDF /* T8HudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8HudHelper.h; sourceTree = "<group>"; };
 		6D25D9931B254C0300588FDF /* T8HudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8HudHelper.m; sourceTree = "<group>"; };
+		6DA0CB021B295E0700C4C2E7 /* UIMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIMenuTableViewController.h; sourceTree = "<group>"; };
+		6DA0CB031B295E0700C4C2E7 /* UIMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMenuTableViewController.m; sourceTree = "<group>"; };
+		6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8CameraHelper.m; sourceTree = "<group>"; };
+		6DA0CB061B298D9600C4C2E7 /* T8CameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8CameraHelper.h; sourceTree = "<group>"; };
 		6DC396571B1C823500270D0D /* T8DevelopKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T8DevelopKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC3965B1B1C823500270D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC3965C1B1C823500270D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +110,15 @@
 				6D25D9931B254C0300588FDF /* T8HudHelper.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		6DA0CB011B295CDB00C4C2E7 /* UIMenuTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6DA0CB021B295E0700C4C2E7 /* UIMenuTableViewController.h */,
+				6DA0CB031B295E0700C4C2E7 /* UIMenuTableViewController.m */,
+			);
+			path = UIMenuTableViewController;
 			sourceTree = "<group>";
 		};
 		6DC3964E1B1C823500270D0D = {
@@ -171,6 +186,7 @@
 			children = (
 				6DC396A91B1C849B00270D0D /* T8DevelopKit.h */,
 				6DC396991B1C82EA00270D0D /* T8Defines.h */,
+				6DA0CB011B295CDB00C4C2E7 /* UIMenuTableViewController */,
 				6D25D98F1B254C0300588FDF /* MBProgressHUD */,
 				6DC396811B1C82EA00270D0D /* Assistant&Helper */,
 				6DC396841B1C82EA00270D0D /* Category */,
@@ -186,6 +202,8 @@
 				6DC396831B1C82EA00270D0D /* T8JsonHelper.m */,
 				6DC396A51B1C83EF00270D0D /* T8SandBoxHelper.h */,
 				6DC396A61B1C83EF00270D0D /* T8SandBoxHelper.m */,
+				6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */,
+				6DA0CB061B298D9600C4C2E7 /* T8CameraHelper.h */,
 			);
 			path = "Assistant&Helper";
 			sourceTree = "<group>";
@@ -311,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DA0CB071B298D9600C4C2E7 /* T8CameraHelper.m in Sources */,
 				6DC396631B1C823500270D0D /* ViewController.m in Sources */,
 				6DC396AC1B1C8FFE00270D0D /* UIView+T8.m in Sources */,
 				6DC3969E1B1C82EA00270D0D /* NSMutableDictionary+T8.m in Sources */,
@@ -321,6 +340,7 @@
 				6DC3969B1B1C82EA00270D0D /* NSDate+T8.m in Sources */,
 				6DC3965D1B1C823500270D0D /* main.m in Sources */,
 				6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */,
+				6DA0CB041B295E0700C4C2E7 /* UIMenuTableViewController.m in Sources */,
 				6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */,
 				6DC3969D1B1C82EA00270D0D /* NSDictionary+T8.m in Sources */,
 				6DC3969A1B1C82EA00270D0D /* T8JsonHelper.m in Sources */,

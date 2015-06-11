@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "T8HudHelper.h"
+#import "T8CameraHelper.h"
 
 @interface ViewController ()
 
@@ -43,7 +44,10 @@
 
 - (void)testButtonPressed
 {
-    [T8HudHelper showHUDMessage:@"111"];
+//    [T8HudHelper showHUDMessage:@"111"];
+    [[T8CameraHelper sharedInstance] showPickerViewControllerOnParentVC:self compled:^(UIImage *image, NSDictionary *editingInfo) {
+        
+    }];
 }
 
 @end
