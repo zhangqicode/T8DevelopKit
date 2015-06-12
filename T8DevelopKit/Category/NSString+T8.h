@@ -21,4 +21,13 @@
 
 - (CGFloat)heightForSize:(CGSize)size font:(UIFont *)font;
 
+//加密方法
+- (NSString *)MD5;
+- (NSString *)getMd5_16Bit_String;
+- (NSString *)getMd5_32Bit_String;
+- (NSString *)getSha1String;
+- (NSString *)getSha256String;
+- (NSString *)getSha384String;
+- (NSString *)getSha512String;
+
 @end

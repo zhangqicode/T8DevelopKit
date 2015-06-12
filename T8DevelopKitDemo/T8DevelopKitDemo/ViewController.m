@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "T8HudHelper.h"
 #import "T8CameraHelper.h"
+#import "NSString+T8.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,8 @@
     self.testButton.frame = CGRectMake(100, 100, 100, 100);
     self.testButton.backgroundColor = [UIColor grayColor];
     [self.view addSubview:self.testButton];
+    
+    NSLog(@"%@", [@"zhang" MD5]);
 
     // Do any additional setup after loading the view, typically from a nib.
 }
