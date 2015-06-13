@@ -36,7 +36,7 @@
 {
     id value = [change objectForKey:@"new"];
     NSString *userDefaultKey = [self getUserDefaultKeyWithPath:keyPath];
-    if (object) {
+    if (value && ![value isKindOfClass:[NSNull class]]) {
         [[NSUserDefaults standardUserDefaults] setObject:value forKey:userDefaultKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }else{
