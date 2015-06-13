@@ -11,6 +11,4 @@
 
 @interface T8UserDefaultHelper : NSObject
 
-AS_SINGLETON(T8UserDefaultHelper)
-
 @end
