@@ -11,6 +11,7 @@
 		6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9931B254C0300588FDF /* T8HudHelper.m */; };
 		6DA0CB041B295E0700C4C2E7 /* UIMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB031B295E0700C4C2E7 /* UIMenuTableViewController.m */; };
 		6DA0CB071B298D9600C4C2E7 /* T8CameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */; };
+		6DA0CB131B2C22FF00C4C2E7 /* T8UserDefaultHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB121B2C22FF00C4C2E7 /* T8UserDefaultHelper.m */; };
 		6DC3965D1B1C823500270D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965C1B1C823500270D0D /* main.m */; };
 		6DC396601B1C823500270D0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965F1B1C823500270D0D /* AppDelegate.m */; };
 		6DC396631B1C823500270D0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC396621B1C823500270D0D /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		6DA0CB031B295E0700C4C2E7 /* UIMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIMenuTableViewController.m; sourceTree = "<group>"; };
 		6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8CameraHelper.m; sourceTree = "<group>"; };
 		6DA0CB061B298D9600C4C2E7 /* T8CameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8CameraHelper.h; sourceTree = "<group>"; };
+		6DA0CB111B2C22FF00C4C2E7 /* T8UserDefaultHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8UserDefaultHelper.h; sourceTree = "<group>"; };
+		6DA0CB121B2C22FF00C4C2E7 /* T8UserDefaultHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8UserDefaultHelper.m; sourceTree = "<group>"; };
 		6DC396571B1C823500270D0D /* T8DevelopKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T8DevelopKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC3965B1B1C823500270D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DC3965C1B1C823500270D0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				6DC396A61B1C83EF00270D0D /* T8SandBoxHelper.m */,
 				6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */,
 				6DA0CB061B298D9600C4C2E7 /* T8CameraHelper.h */,
+				6DA0CB111B2C22FF00C4C2E7 /* T8UserDefaultHelper.h */,
+				6DA0CB121B2C22FF00C4C2E7 /* T8UserDefaultHelper.m */,
 			);
 			path = "Assistant&Helper";
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */,
 				6DC3969D1B1C82EA00270D0D /* NSDictionary+T8.m in Sources */,
 				6DC3969A1B1C82EA00270D0D /* T8JsonHelper.m in Sources */,
+				6DA0CB131B2C22FF00C4C2E7 /* T8UserDefaultHelper.m in Sources */,
 				6DC396A71B1C83EF00270D0D /* T8SandBoxHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
