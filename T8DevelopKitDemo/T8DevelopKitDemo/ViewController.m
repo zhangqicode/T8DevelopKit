@@ -28,9 +28,6 @@
     [self.view addSubview:self.testButton];
     
     NSLog(@"%@", [@"zhang" MD5]);
-    
-    NSLog(@"test:%@", [T8UserDefaultHelper sharedInstance].test);
-    [T8UserDefaultHelper sharedInstance].test = @"321";
 
     // Do any additional setup after loading the view, typically from a nib.
 }

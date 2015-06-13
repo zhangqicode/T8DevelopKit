@@ -11,7 +11,13 @@
 
 @implementation T8UserDefaultHelper
 
-DEF_SINGLETON(T8UserDefaultHelper)
++ (T8UserDefaultHelper *)sharedInstance
+{
+    static dispatch_once_t once;
+    static T8UserDefaultHelper * __singleton__;
+    dispatch_once( &once, ^{ __singleton__ = [[[self class] alloc] init]; } );
+    return __singleton__;
+}
 
 - (id)init
 {
