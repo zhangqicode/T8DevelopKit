@@ -11,5 +11,6 @@
 @interface T8MenuTitleCell : T8MenuCell
 
 @property (nonatomic) UILabel *titleLabel;
+@property (nonatomic) UILabel *subTitleLabel;
 
 @end

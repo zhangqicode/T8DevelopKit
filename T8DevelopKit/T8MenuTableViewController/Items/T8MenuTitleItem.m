@@ -18,13 +18,23 @@
 
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator
 {
+    return [self initWithTitle:title indicator:indicator subTitle:nil];
+}
+
+- (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator subTitle:(NSString *)subTitle
+{
     self = [super init];
     if (self) {
         self.cell = [[T8MenuTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         ((T8MenuTitleCell *)self.cell).titleLabel.text = title;
         if (indicator) {
             self.cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(self.cell.contentView);
+                make.centerY.equalTo(self.cell.contentView);
+            }];
         }
+        ((T8MenuTitleCell *)self.cell).subTitleLabel.text = subTitle;
     }
     return self;
 }

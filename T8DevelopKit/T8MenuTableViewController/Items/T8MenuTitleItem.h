@@ -12,5 +12,6 @@
 
 - (id)initWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator;
+- (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator subTitle:(NSString *)subTitle;
 
 @end
