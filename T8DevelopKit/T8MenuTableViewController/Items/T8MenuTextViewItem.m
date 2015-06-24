@@ -34,4 +34,9 @@
     return self.cellHeight;
 }
 
+- (NSString *)text
+{
+    return [((T8MenuTextViewCell *)self.cell).textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 @end

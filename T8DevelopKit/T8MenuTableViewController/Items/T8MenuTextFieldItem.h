@@ -10,6 +10,8 @@
 
 @interface T8MenuTextFieldItem : T8MenuItem
 
+@property (nonatomic,readonly) NSString *text;
+
 - (id)initWithPlaceHolder:(NSString *)placeHolder;
 
 @end

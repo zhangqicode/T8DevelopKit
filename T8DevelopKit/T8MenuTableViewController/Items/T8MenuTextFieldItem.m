@@ -27,4 +27,9 @@
     return 45;
 }
 
+- (NSString *)text
+{
+    return [((T8MenuTextFieldCell *)self.cell).textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 @end
