@@ -61,23 +61,52 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSMutableArray *sectionArr = [self.menuSections objectAtIndex:section];
+    T8MenuSection *menuSection = [self.menuSections objectAtIndex:section];
+    NSMutableArray *sectionArr = menuSection.items;
     return sectionArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableArray *sectionArr = [self.menuSections objectAtIndex:indexPath.section];
+    T8MenuSection *section = [self.menuSections objectAtIndex:indexPath.section];
+    NSMutableArray *sectionArr = section.items;
     T8MenuItem *item = [sectionArr objectAtIndex:indexPath.row];
     return [item itemHeight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableArray *sectionArr = [self.menuSections objectAtIndex:indexPath.section];
+    T8MenuSection *section = [self.menuSections objectAtIndex:indexPath.section];
+    NSMutableArray *sectionArr = section.items;
     T8MenuItem *item = [sectionArr objectAtIndex:indexPath.row];
     UITableViewCell *cell = item.cell;
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    T8MenuSection *menuSection = [self.menuSections objectAtIndex:section];
+    return menuSection.sectionEdgeInsets.top;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *header = [[UIView alloc] init];
+    header.backgroundColor = [UIColor clearColor];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    T8MenuSection *menuSection = [self.menuSections objectAtIndex:section];
+    return menuSection.sectionEdgeInsets.bottom;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footer = [[UIView alloc] init];
+    footer.backgroundColor = [UIColor clearColor];
+    return footer;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

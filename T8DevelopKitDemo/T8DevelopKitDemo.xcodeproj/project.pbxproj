@@ -12,6 +12,7 @@
 		6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36841B3A58630015364D /* T8PlaceHolderTextView.m */; };
 		6D5C36881B3A663F0015364D /* T8MenuTextViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36871B3A663F0015364D /* T8MenuTextViewItem.m */; };
 		6D5C368B1B3A669B0015364D /* T8MenuTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C368A1B3A669B0015364D /* T8MenuTextViewCell.m */; };
+		6D5C368E1B3A96D30015364D /* T8MenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C368D1B3A96D30015364D /* T8MenuSection.m */; };
 		6D7C17771B3045E8009B1D03 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C17761B3045E8009B1D03 /* Reveal.framework */; };
 		6D8E20FE1B33EEDA005BC0F5 /* TestMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E20FD1B33EEDA005BC0F5 /* TestMenuViewController.m */; };
 		6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E21021B33EF1C005BC0F5 /* T8MenuCell.m */; };
@@ -66,6 +67,8 @@
 		6D5C36871B3A663F0015364D /* T8MenuTextViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuTextViewItem.m; sourceTree = "<group>"; };
 		6D5C36891B3A669B0015364D /* T8MenuTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuTextViewCell.h; sourceTree = "<group>"; };
 		6D5C368A1B3A669B0015364D /* T8MenuTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuTextViewCell.m; sourceTree = "<group>"; };
+		6D5C368C1B3A96D30015364D /* T8MenuSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuSection.h; sourceTree = "<group>"; };
+		6D5C368D1B3A96D30015364D /* T8MenuSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuSection.m; sourceTree = "<group>"; };
 		6D7C17761B3045E8009B1D03 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		6D8E20FC1B33EEDA005BC0F5 /* TestMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMenuViewController.h; sourceTree = "<group>"; };
 		6D8E20FD1B33EEDA005BC0F5 /* TestMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMenuViewController.m; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				6D8E21031B33EF1C005BC0F5 /* Items */,
 				6D8E21061B33EF1C005BC0F5 /* T8MenuTableViewController.h */,
 				6D8E21071B33EF1C005BC0F5 /* T8MenuTableViewController.m */,
+				6D5C368C1B3A96D30015364D /* T8MenuSection.h */,
+				6D5C368D1B3A96D30015364D /* T8MenuSection.m */,
 			);
 			path = T8MenuTableViewController;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				6DC3969E1B1C82EA00270D0D /* NSMutableDictionary+T8.m in Sources */,
 				6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */,
 				6DC3969C1B1C82EA00270D0D /* NSDateFormatter+T8.m in Sources */,
+				6D5C368E1B3A96D30015364D /* T8MenuSection.m in Sources */,
 				6D8E21131B39121C005BC0F5 /* T8MenuTextFieldItem.m in Sources */,
 				6D8E21191B39158E005BC0F5 /* T8MenuDescriptionItem.m in Sources */,
 				6D8E211C1B3915DD005BC0F5 /* T8MenuDescriptionCell.m in Sources */,

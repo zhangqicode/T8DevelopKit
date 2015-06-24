@@ -22,11 +22,13 @@
         T8MenuTextFieldItem *textFieldItem = [[T8MenuTextFieldItem alloc] initWithPlaceHolder:@"姓名"];
         T8MenuDescriptionItem *descItem = [[T8MenuDescriptionItem alloc] initWithDescription:@"群ID将用于群组的URL或搜索群组，群ID不可以于现有的重复fawefafweawefw"];
         T8MenuTextViewItem *textViewItem = [[T8MenuTextViewItem alloc] initWithPlaceHolder:@"电影迷们都在这里，只讨论电影相关" andHeight:100];
-        NSMutableArray *items = [NSMutableArray arrayWithObject:item];
-        [items addObject:textFieldItem];
-        [items addObject:descItem];
-        [items addObject:textViewItem];
-        [self.menuSections addObject:items];
+        T8MenuSection *section = [[T8MenuSection alloc] init];
+        [section addMenuItem:item];
+        [section addMenuItem:textFieldItem];
+        [section addMenuItem:descItem];
+        [section addMenuItem:textViewItem];
+        section.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 0, 0);
+        [self.menuSections addObject:section];
     }
     return self;
 }
