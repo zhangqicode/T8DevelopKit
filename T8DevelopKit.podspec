@@ -107,7 +107,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec "UIMenuTableViewController" do |ss|
-    ss.source_files = "T8DevelopKit/UIMenuTableViewController/*.{h,m}"
+
+#ss.source_files = "T8DevelopKit/UIMenuTableViewController/*.{h,m}"
 
     ss.subspec "Items" do |sss|
       sss.source_files = "T8DevelopKit/UIMenuTableViewController/Items/*.{h,m}"
@@ -120,6 +121,7 @@ Pod::Spec.new do |s|
     ss.subspec "Views" do |sss|
       sss.source_files = "T8DevelopKit/UIMenuTableViewController/Views/*.{h,m}"
     end
+
   end
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
