@@ -106,11 +106,21 @@ Pod::Spec.new do |s|
     ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h,m}"
   end
 
-  s.subspec "UIMenuTableViewController" do |ss|
+  s.subspec "T8MenuTableViewController" do |ss|
 
-    ss.source_files = "T8DevelopKit/UIMenuTableViewController/*.{h,m}"
+    ss.source_files = "T8DevelopKit/T8MenuTableViewController/*.{h,m}"
 
-    
+    ss.subspec "Items" do |sss|
+      sss.source_files = "T8DevelopKit/T8MenuTableViewController/Items/*.{h,m}"
+    end
+
+    ss.subspec "Cells" do |sss|
+      sss.source_files = "T8DevelopKit/T8MenuTableViewController/Cells/*.{h,m}"
+    end
+
+    ss.subspec "Views" do |sss|
+      sss.source_files = "T8DevelopKit/T8MenuTableViewController/Views/*.{h,m}"
+    end
 
   end
 
