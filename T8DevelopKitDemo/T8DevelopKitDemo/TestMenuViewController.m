@@ -31,6 +31,12 @@
         [section addMenuItem:textViewItem];
         section.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 0, 0);
         [self.menuSections addObject:section];
+        
+        T8MenuDescriptionItem *he = [[T8MenuDescriptionItem alloc] initWithDescription:@"jhee"];
+        T8MenuSection *section2 = [[T8MenuSection alloc] init];
+        [section2 addMenuItem:he];
+        section2.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 20, 0);
+        [self.menuSections addObject:section2];
     }
     return self;
 }

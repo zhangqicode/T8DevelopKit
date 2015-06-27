@@ -12,4 +12,9 @@
 
 @interface T8MenuCell : UITableViewCell
 
+@property (nonatomic) UIImageView *topLine;
+@property (nonatomic) UIImageView *bottomLine;
+
+- (void)showTopLine:(BOOL)top bottomLine:(BOOL)bottom;
+
 @end

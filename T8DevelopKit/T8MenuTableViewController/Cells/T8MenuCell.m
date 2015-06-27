@@ -10,6 +10,29 @@
 
 @implementation T8MenuCell
 
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self.contentView addSubview:self.topLine];
+        [self.contentView addSubview:self.bottomLine];
+        
+        [self.topLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self);
+            make.right.equalTo(self);
+            make.top.equalTo(self);
+            make.height.equalTo(@0.3);
+        }];
+        [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self);
+            make.right.equalTo(self);
+            make.bottom.equalTo(self);
+            make.height.equalTo(@0.5);
+        }];
+    }
+    return self;
+}
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -18,6 +41,33 @@
     [super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
+}
+
+- (void)showTopLine:(BOOL)top bottomLine:(BOOL)bottom
+{
+    self.topLine.hidden = !top;
+    self.bottomLine.hidden = !bottom;
+}
+
+#pragma mark - getter
+- (UIImageView *)topLine
+{
+    if (!_topLine) {
+        _topLine = [[UIImageView alloc] init];
+        _topLine.backgroundColor = UIColorRGB(0xa0a9ae);
+        _topLine.hidden = YES;
+    }
+    return _topLine;
+}
+
+- (UIImageView *)bottomLine
+{
+    if (!_bottomLine) {
+        _bottomLine = [[UIImageView alloc] init];
+        _bottomLine.backgroundColor = UIColorRGB(0xa0a9ae);
+        _bottomLine.hidden = YES;
+    }
+    return _bottomLine;
 }
 
 @end

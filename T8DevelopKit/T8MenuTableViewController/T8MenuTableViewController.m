@@ -9,6 +9,7 @@
 #import "T8MenuTableViewController.h"
 #import "T8Defines.h"
 #import "T8MenuItem.h"
+#import "T8MenuDescriptionCell.h"
 
 @interface T8MenuTableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -40,7 +41,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
-        _tableView.separatorColor = UIColorRGB(0xa0a9ae);
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
 }
@@ -79,7 +80,26 @@
     T8MenuSection *section = [self.menuSections objectAtIndex:indexPath.section];
     NSMutableArray *sectionArr = section.items;
     T8MenuItem *item = [sectionArr objectAtIndex:indexPath.row];
-    UITableViewCell *cell = item.cell;
+    T8MenuCell *cell = item.cell;
+    if (indexPath.row==0) {
+        if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
+            if (sectionArr.count>1) {
+                [cell showTopLine:NO bottomLine:YES];
+            }else{
+                [cell showTopLine:NO bottomLine:NO];
+            }
+        }else{
+            [cell showTopLine:YES bottomLine:YES];
+        }
+    }else if (indexPath.row==sectionArr.count) {
+        if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
+            [cell showTopLine:NO bottomLine:NO];
+        }else{
+            [cell showTopLine:NO bottomLine:YES];
+        }
+    }else{
+        [cell showTopLine:NO bottomLine:YES];
+    }
     return cell;
 }
 
