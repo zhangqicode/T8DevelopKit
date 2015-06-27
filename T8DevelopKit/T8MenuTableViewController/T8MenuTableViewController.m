@@ -91,7 +91,7 @@
         }else{
             [cell showTopLine:YES bottomLine:YES];
         }
-    }else if (indexPath.row==sectionArr.count) {
+    }else if (indexPath.row==sectionArr.count-1) {
         if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
             [cell showTopLine:NO bottomLine:NO];
         }else{

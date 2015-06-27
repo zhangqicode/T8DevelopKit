@@ -27,8 +27,8 @@
         [section addMenuItem:item];
         [section addMenuItem:itemm];
         [section addMenuItem:textFieldItem];
-        [section addMenuItem:descItem];
         [section addMenuItem:textViewItem];
+        [section addMenuItem:descItem];
         section.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 0, 0);
         [self.menuSections addObject:section];
         
