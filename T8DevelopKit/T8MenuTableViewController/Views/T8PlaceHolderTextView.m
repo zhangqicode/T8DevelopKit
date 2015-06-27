@@ -18,11 +18,12 @@
         return;
     }
     
-    NSUInteger maxChars = [T8PlaceHolderTextView maxCharactersPerLine];
-    if([placeHolder length] > maxChars) {
-        placeHolder = [placeHolder substringToIndex:maxChars - 8];
-        placeHolder = [[placeHolder stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] stringByAppendingFormat:@"..."];
-    }
+    //qi.zhang modify, make it could show multi lines of placeholder
+//    NSUInteger maxChars = [T8PlaceHolderTextView maxCharactersPerLine];
+//    if([placeHolder length] > maxChars) {
+//        placeHolder = [placeHolder substringToIndex:maxChars - 8];
+//        placeHolder = [[placeHolder stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] stringByAppendingFormat:@"..."];
+//    }
     
     _placeHolder = placeHolder;
     [self setNeedsDisplay];
@@ -140,7 +141,7 @@
         
         if ([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0) {
             NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-            paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+            paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
             paragraphStyle.alignment = self.textAlignment;
             
             [self.placeHolder drawInRect:placeHolderRect
