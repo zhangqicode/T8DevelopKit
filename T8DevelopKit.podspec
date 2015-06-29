@@ -124,6 +124,10 @@ Pod::Spec.new do |s|
 
   end
 
+  s.subspec "BaseController" do |ss|
+    ss.source_files = "T8DevelopKit/BaseController/*.{h,m}"
+  end
+
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
