@@ -19,12 +19,18 @@
 
 - (id)initWithPlaceHolder:(NSString *)placeHolder andHeight:(CGFloat)height
 {
+    return [self initWithPlaceHolder:placeHolder andHeight:height initialValue:nil];
+}
+
+- (id)initWithPlaceHolder:(NSString *)placeHolder andHeight:(CGFloat)height initialValue:(NSString *)initialValue
+{
     self = [super init];
     if (self) {
         self.cellHeight = height;
         self.cell = [[T8MenuTextViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         
         ((T8MenuTextViewCell *)self.cell).textView.placeHolder = placeHolder;
+        ((T8MenuTextViewCell *)self.cell).textView.text = initialValue;
     }
     return self;
 }
@@ -37,6 +43,11 @@
 - (NSString *)text
 {
     return [((T8MenuTextViewCell *)self.cell).textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+- (void)setText:(NSString *)text
+{
+    ((T8MenuTextViewCell *)self.cell).textView.text = text;
 }
 
 @end

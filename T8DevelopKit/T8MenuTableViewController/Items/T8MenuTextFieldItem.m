@@ -13,11 +13,17 @@
 
 - (id)initWithPlaceHolder:(NSString *)placeHolder
 {
+    return [self initWithPlaceHolder:placeHolder initialValue:nil];
+}
+
+- (id)initWithPlaceHolder:(NSString *)placeHolder initialValue:(NSString *)initialValue
+{
     self = [super init];
     if (self) {
         self.cell = [[T8MenuTextFieldCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         
         ((T8MenuTextFieldCell *)self.cell).textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:placeHolder attributes:[NSDictionary dictionaryWithObject:UIColorRGB(0xa0a9ae) forKey:NSForegroundColorAttributeName]];
+        ((T8MenuTextFieldCell *)self.cell).textField.text = initialValue;
     }
     return self;
 }
@@ -30,6 +36,11 @@
 - (NSString *)text
 {
     return [((T8MenuTextFieldCell *)self.cell).textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+- (void)setText:(NSString *)text
+{
+    ((T8MenuTextFieldCell *)self.cell).textField.text = text;
 }
 
 @end
