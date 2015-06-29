@@ -7,6 +7,7 @@
 //
 
 #import "T8BaseNavigationController.h"
+#import "T8Defines.h"
 
 @interface T8BaseNavigationController ()<UIGestureRecognizerDelegate>
 

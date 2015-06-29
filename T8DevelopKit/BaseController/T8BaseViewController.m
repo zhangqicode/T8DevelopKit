@@ -7,6 +7,7 @@
 //
 
 #import "T8BaseViewController.h"
+#import "T8Defines.h"
 
 @interface T8BaseViewController ()
 

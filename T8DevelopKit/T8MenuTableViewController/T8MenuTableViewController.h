@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "T8MenuSection.h"
+#import "T8BaseViewController.h"
 
-@interface T8MenuTableViewController : UIViewController
+@interface T8MenuTableViewController : T8BaseViewController
 
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *menuSections;
