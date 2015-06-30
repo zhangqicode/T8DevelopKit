@@ -15,6 +15,7 @@
 #pragma mark Navigation Text Button
 - (void)setLeftBarButtonItem:(UIBarButtonItem *)barButtonItem;
 - (void)setRightBarButtonItem:(UIBarButtonItem *)barButtonItem;
+- (void)setRightBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
 - (UIBarButtonItem *)leftBarButtonItem;
 - (UIBarButtonItem *)rightBarButtonItem;

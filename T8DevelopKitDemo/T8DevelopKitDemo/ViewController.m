@@ -11,6 +11,7 @@
 #import "T8CameraHelper.h"
 #import "NSString+T8.h"
 #import "T8UserDefaultHelper.h"
+#import "TestMenuViewController.h"
 
 @interface ViewController ()
 
@@ -48,10 +49,8 @@
 
 - (void)testButtonPressed
 {
-//    [T8HudHelper showHUDMessage:@"111"];
-    [[T8CameraHelper sharedInstance] showPickerViewControllerOnParentVC:self compled:^(UIImage *image, NSDictionary *editingInfo) {
-        
-    }];
+    TestMenuViewController *menu = [[TestMenuViewController alloc] init];
+    [self.navigationController pushViewController:menu animated:YES];
 }
 
 @end

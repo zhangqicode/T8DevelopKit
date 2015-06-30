@@ -42,6 +42,16 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self setRightBarButtonItemWithTitle:@"哈哈呵呵" target:self action:@selector(haha)];
+}
 
+- (void)haha
+{
+    NSLog(@"haha...");
+}
 
 @end

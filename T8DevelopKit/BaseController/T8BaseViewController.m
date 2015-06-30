@@ -72,6 +72,16 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, barButtonItem, nil];
 }
 
+- (void)setRightBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    UIBarButtonItem *item = [self navigationDefaultItemWithTitle:title Target:target action:action];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -5;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, item, nil];
+}
+
 - (UIBarButtonItem *)leftBarButtonItem
 {
     if ((self.navigationItem.leftBarButtonItems != nil) && (self.navigationItem.leftBarButtonItems.count == 0)) {
@@ -99,6 +109,24 @@
     
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     return backButtonItem;
+}
+
+- (UIBarButtonItem *)navigationDefaultItemWithTitle:(NSString *)title Target:(id)target action:(SEL)action
+{
+    UIButton *btn = [self makeDefaultItemButton];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn sizeToFit];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
+//could override to make your own style
+- (UIButton *)makeDefaultItemButton
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    btn.titleLabel.font = [UIFont systemFontOfSize:15];
+    return btn;
 }
 
 - (void)popViewController
