@@ -68,7 +68,10 @@
 - (void)haha
 {
     NSLog(@"haha...");
-    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor redColor];
+    view.frame = CGRectMake(0, 0, 50, 30);
+    self.custom1.customView = view;
 }
 
 @end

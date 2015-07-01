@@ -10,6 +10,8 @@
 
 @interface T8MenuTitleCustomViewItem : T8MenuItem
 
+@property (nonatomic) UIView *customView;
+
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator customView:(UIView *)customView;
 
 @end
