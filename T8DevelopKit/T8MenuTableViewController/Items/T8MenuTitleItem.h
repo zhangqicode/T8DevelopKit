@@ -10,6 +10,9 @@
 
 @interface T8MenuTitleItem : T8MenuItem
 
+@property (nonatomic) NSString *title;
+@property (nonatomic) NSString *subTitle;
+
 - (id)initWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator;
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator subTitle:(NSString *)subTitle;

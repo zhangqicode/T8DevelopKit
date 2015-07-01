@@ -44,4 +44,26 @@
     return 45;
 }
 
+#pragma mark - getter
+- (NSString *)title
+{
+    return ((T8MenuTitleCell *)self.cell).titleLabel.text;
+}
+
+- (NSString *)subTitle
+{
+    return ((T8MenuTitleCell *)self.cell).subTitleLabel.text;
+}
+
+#pragma mark - setter
+- (void)setTitle:(NSString *)title
+{
+    ((T8MenuTitleCell *)self.cell).titleLabel.text = title;
+}
+
+- (void)setSubTitle:(NSString *)subTitle
+{
+    ((T8MenuTitleCell *)self.cell).subTitleLabel.text = subTitle;
+}
+
 @end

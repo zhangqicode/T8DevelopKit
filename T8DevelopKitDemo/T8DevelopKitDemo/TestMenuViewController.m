@@ -13,6 +13,12 @@
 #import "T8MenuTextViewItem.h"
 #import "T8MenuTitleCustomViewItem.h"
 
+@interface TestMenuViewController ()
+
+@property (nonatomic) T8MenuTitleCustomViewItem *custom1;
+
+@end
+
 @implementation TestMenuViewController
 
 - (id)init
@@ -20,6 +26,7 @@
     self = [super init];
     if (self) {
         T8MenuTitleItem *item = [[T8MenuTitleItem alloc] initWithTitle:@"123" indicator:YES subTitle:@"faweijgoijoiawefiauwhegiuawhfeiawjefiawhgruiafhiuw"];
+        item.title = @"321";
         T8MenuTitleItem *itemm = [[T8MenuTitleItem alloc] initWithTitle:@"gwae" indicator:NO subTitle:@"fawuhuhgauweuyfawguyhghgiwaufoerogoiawjfiuahweugh"];
         T8MenuTextFieldItem *textFieldItem = [[T8MenuTextFieldItem alloc] initWithPlaceHolder:@"name" initialValue:@"zhangqi"];
         textFieldItem.text = @"qizhang";
@@ -38,12 +45,12 @@
         UIImageView *customView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"female"]];
         customView1.frame = CGRectMake(0, 0, 100, 45);
         customView1.backgroundColor = [UIColor greenColor];
-        T8MenuTitleCustomViewItem *custom1 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"111111111111111111111111111111111111111111111111111111111111111111111" indicator:NO customView:customView1];
+        self.custom1 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"111111111111111111111111111111111111111111111111111111111111111111111" indicator:NO customView:customView1];
         UIImageView *customView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"female"]];
         T8MenuTitleCustomViewItem *custom2 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"222222222222222222222222222222222222222222222222222222222222222222222222" indicator:YES customView:customView2];
         T8MenuSection *section2 = [[T8MenuSection alloc] init];
         [section2 addMenuItem:he];
-        [section2 addMenuItem:custom1];
+        [section2 addMenuItem:self.custom1];
         [section2 addMenuItem:custom2];
         section2.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 20, 0);
         [self.menuSections addObject:section2];
@@ -61,6 +68,7 @@
 - (void)haha
 {
     NSLog(@"haha...");
+    
 }
 
 @end
