@@ -11,6 +11,7 @@
 #import "T8MenuTextFieldItem.h"
 #import "T8MenuDescriptionItem.h"
 #import "T8MenuTextViewItem.h"
+#import "T8MenuTitleCustomViewItem.h"
 
 @implementation TestMenuViewController
 
@@ -34,8 +35,16 @@
         [self.menuSections addObject:section];
         
         T8MenuDescriptionItem *he = [[T8MenuDescriptionItem alloc] initWithDescription:@"jhee"];
+        UIImageView *customView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"female"]];
+        customView1.frame = CGRectMake(0, 0, 100, 45);
+        customView1.backgroundColor = [UIColor greenColor];
+        T8MenuTitleCustomViewItem *custom1 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"111111111111111111111111111111111111111111111111111111111111111111111" indicator:NO customView:customView1];
+        UIImageView *customView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"female"]];
+        T8MenuTitleCustomViewItem *custom2 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"222222222222222222222222222222222222222222222222222222222222222222222222" indicator:YES customView:customView2];
         T8MenuSection *section2 = [[T8MenuSection alloc] init];
         [section2 addMenuItem:he];
+        [section2 addMenuItem:custom1];
+        [section2 addMenuItem:custom2];
         section2.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 20, 0);
         [self.menuSections addObject:section2];
     }

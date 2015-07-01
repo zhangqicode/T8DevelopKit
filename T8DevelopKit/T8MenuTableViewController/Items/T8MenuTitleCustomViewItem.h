@@ -1,0 +1,15 @@
+//
+//  T8MenuTitleCustomViewItem.h
+//  T8DevelopKitDemo
+//
+//  Created by 琦张 on 15/7/1.
+//  Copyright (c) 2015年 琦张. All rights reserved.
+//
+
+#import "T8MenuItem.h"
+
+@interface T8MenuTitleCustomViewItem : T8MenuItem
+
+- (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator customView:(UIView *)customView;
+
+@end

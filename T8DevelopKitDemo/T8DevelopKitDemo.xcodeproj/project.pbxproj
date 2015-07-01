@@ -10,6 +10,8 @@
 		6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C281B41071B00B3AE4D /* T8BaseNavigationController.m */; };
 		6D177C2E1B41071B00B3AE4D /* T8BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C2A1B41071B00B3AE4D /* T8BaseViewController.m */; };
 		6D177C2F1B41071B00B3AE4D /* T8TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C2C1B41071B00B3AE4D /* T8TableViewController.m */; };
+		6D177C641B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C631B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.m */; };
+		6D177C671B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C661B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m */; };
 		6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9911B254C0300588FDF /* MBProgressHUD.m */; };
 		6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9931B254C0300588FDF /* T8HudHelper.m */; };
 		6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36841B3A58630015364D /* T8PlaceHolderTextView.m */; };
@@ -66,6 +68,10 @@
 		6D177C2A1B41071B00B3AE4D /* T8BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8BaseViewController.m; sourceTree = "<group>"; };
 		6D177C2B1B41071B00B3AE4D /* T8TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8TableViewController.h; sourceTree = "<group>"; };
 		6D177C2C1B41071B00B3AE4D /* T8TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8TableViewController.m; sourceTree = "<group>"; };
+		6D177C621B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuTitleCustomViewCell.h; sourceTree = "<group>"; };
+		6D177C631B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuTitleCustomViewCell.m; sourceTree = "<group>"; };
+		6D177C651B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuTitleCustomViewItem.h; sourceTree = "<group>"; };
+		6D177C661B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuTitleCustomViewItem.m; sourceTree = "<group>"; };
 		6D25D9901B254C0300588FDF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		6D25D9911B254C0300588FDF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6D25D9921B254C0300588FDF /* T8HudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8HudHelper.h; sourceTree = "<group>"; };
@@ -223,6 +229,8 @@
 				6D8E21021B33EF1C005BC0F5 /* T8MenuCell.m */,
 				6D8E210E1B33F743005BC0F5 /* T8MenuTitleCell.h */,
 				6D8E210F1B33F743005BC0F5 /* T8MenuTitleCell.m */,
+				6D177C621B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.h */,
+				6D177C631B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.m */,
 				6D8E21141B3912E7005BC0F5 /* T8MenuTextFieldCell.h */,
 				6D8E21151B3912E7005BC0F5 /* T8MenuTextFieldCell.m */,
 				6D5C36891B3A669B0015364D /* T8MenuTextViewCell.h */,
@@ -240,6 +248,8 @@
 				6D8E21051B33EF1C005BC0F5 /* T8MenuItem.m */,
 				6D8E210B1B33F4CA005BC0F5 /* T8MenuTitleItem.h */,
 				6D8E210C1B33F4CA005BC0F5 /* T8MenuTitleItem.m */,
+				6D177C651B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.h */,
+				6D177C661B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m */,
 				6D8E21111B39121C005BC0F5 /* T8MenuTextFieldItem.h */,
 				6D8E21121B39121C005BC0F5 /* T8MenuTextFieldItem.m */,
 				6D5C36861B3A663F0015364D /* T8MenuTextViewItem.h */,
@@ -510,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DA0CB071B298D9600C4C2E7 /* T8CameraHelper.m in Sources */,
+				6D177C641B43E77D00B3AE4D /* T8MenuTitleCustomViewCell.m in Sources */,
 				6DC396631B1C823500270D0D /* ViewController.m in Sources */,
 				6D8E21161B3912E7005BC0F5 /* T8MenuTextFieldCell.m in Sources */,
 				6DC396AC1B1C8FFE00270D0D /* UIView+T8.m in Sources */,
@@ -537,6 +548,7 @@
 				6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */,
 				6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */,
 				6DC3969D1B1C82EA00270D0D /* NSDictionary+T8.m in Sources */,
+				6D177C671B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m in Sources */,
 				6DC3969A1B1C82EA00270D0D /* T8JsonHelper.m in Sources */,
 				6DA0CB131B2C22FF00C4C2E7 /* T8UserDefaultHelper.m in Sources */,
 				6D5C368B1B3A669B0015364D /* T8MenuTextViewCell.m in Sources */,
