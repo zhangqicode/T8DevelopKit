@@ -42,8 +42,18 @@
         _tableView.backgroundColor = [UIColor clearColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        
         UIView *view = [UIView new];
         _tableView.tableFooterView = view;
+        
+        if (_tableViewStyle == UITableViewStylePlain) {
+            if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+                [_tableView setSeparatorInset:UIEdgeInsetsZero];
+            }
+            if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+                [_tableView setLayoutMargins:UIEdgeInsetsZero];
+            }
+        }
     }
     return _tableView;
 }
@@ -66,6 +76,17 @@
 - (UITableViewCell *)tableView:(UITableView *) __unused tableView cellForRowAtIndexPath:(NSIndexPath *) __unused indexPath
 {
     return nil;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 @end
