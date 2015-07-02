@@ -72,6 +72,16 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, barButtonItem, nil];
 }
 
+- (void)setLeftBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    UIBarButtonItem *item = [self navigationDefaultItemWithTitle:title Target:target action:action];
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -5;
+    self.navigationItem.leftBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, item, nil];
+}
+
 - (void)setRightBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
     UIBarButtonItem *item = [self navigationDefaultItemWithTitle:title Target:target action:action];

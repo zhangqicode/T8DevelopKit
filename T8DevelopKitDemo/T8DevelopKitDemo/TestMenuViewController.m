@@ -63,6 +63,7 @@
     [super viewDidLoad];
     
     [self setRightBarButtonItemWithTitle:@"哈哈呵呵" target:self action:@selector(haha)];
+    [self setLeftBarButtonItemWithTitle:@"哈哈呵呵" target:self action:@selector(haha)];
 }
 
 - (void)haha
