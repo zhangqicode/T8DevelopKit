@@ -7,6 +7,7 @@
 //
 
 #import "T8TableViewController.h"
+#import "SVPullToRefresh.h"
 
 @interface T8TableViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -23,6 +24,30 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (_shouldLoadTableView) {
+        _shouldLoadTableView = NO;
+        
+        __weak typeof(self) weakSelf = self;
+        // 添加下拉刷新功能
+        if (self.tableView.showsPullToRefresh) {
+            [self.tableView addPullToRefreshWithActionHandler:^{
+                [weakSelf performSelectorOnMainThread:@selector(pullToRefreshAction) withObject:nil waitUntilDone:YES];
+            }];
+        }
+        
+        // 添加无限下翻功能
+        if (self.tableView.showsInfiniteScrolling) {
+            [self.tableView addInfiniteScrollingWithActionHandler:^{
+                [weakSelf performSelectorOnMainThread:@selector(infiniteScrollingAction) withObject:nil waitUntilDone:YES];
+            }];
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -32,6 +57,8 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.showsPullToRefresh = NO;     // default is NO
+    self.tableView.showsInfiniteScrolling = NO; // default is NO
 }
 
 - (UITableView *)tableView
@@ -61,6 +88,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Method
+
+- (void)pullToRefreshAction
+{
+
+}
+
+- (void)infiniteScrollingAction
+{
+    
+}
+
+- (void)stopRefreshAction
+{
+    [self.tableView.pullToRefreshView stopAnimating];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *) __unused tableView
