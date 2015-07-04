@@ -23,4 +23,9 @@
     [self.items addObject:item];
 }
 
+- (void)removeMenuItem:(T8MenuItem *)item
+{
+    [self.items removeObject:item];
+}
+
 @end
