@@ -33,14 +33,14 @@
         
         __weak typeof(self) weakSelf = self;
         // 添加下拉刷新功能
-        if (self.tableView.showsPullToRefresh) {
+        if (self.showPullToRefresh) {
             [self.tableView addPullToRefreshWithActionHandler:^{
                 [weakSelf performSelectorOnMainThread:@selector(pullToRefreshAction) withObject:nil waitUntilDone:YES];
             }];
         }
         
         // 添加无限下翻功能
-        if (self.tableView.showsInfiniteScrolling) {
+        if (self.showInfiniteScrolling) {
             [self.tableView addInfiniteScrollingWithActionHandler:^{
                 [weakSelf performSelectorOnMainThread:@selector(infiniteScrollingAction) withObject:nil waitUntilDone:YES];
             }];
@@ -51,14 +51,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    _shouldLoadTableView = YES;
     if (![self.view.subviews containsObject:self.tableView])
         [self.view addSubview:self.tableView];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.showsPullToRefresh = NO;     // default is NO
-    self.tableView.showsInfiniteScrolling = NO; // default is NO
+    self.showPullToRefresh = NO;     // default is NO
+    self.showInfiniteScrolling = NO; // default is NO
 }
 
 - (UITableView *)tableView
@@ -94,7 +95,7 @@
 
 - (void)pullToRefreshAction
 {
-
+    
 }
 
 - (void)infiniteScrollingAction

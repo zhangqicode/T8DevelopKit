@@ -19,6 +19,9 @@
 @property (nonatomic) UITableViewStyle tableViewStyle;
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, assign) BOOL showPullToRefresh;
+@property (nonatomic, assign) BOOL showInfiniteScrolling;
+
 - (id)initWithStyle:(UITableViewStyle)style;
 
 /**
@@ -36,6 +39,5 @@
  */
 - (void)infiniteScrollingAction;
 
-- (void)refreshTable;
 
 @end
