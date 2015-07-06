@@ -12,6 +12,7 @@
 #import "T8MenuDescriptionItem.h"
 #import "T8MenuTextViewItem.h"
 #import "T8MenuTitleCustomViewItem.h"
+#import "T8MenuFunctionItem.h"
 
 @interface TestMenuViewController ()
 
@@ -54,6 +55,11 @@
         [section2 addMenuItem:custom2];
         section2.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 20, 0);
         [self.menuSections addObject:section2];
+        
+        T8MenuFunctionItem *func = [[T8MenuFunctionItem alloc] initWithFunctionTitle:@"log out"];
+        T8MenuSection *section3 = [[T8MenuSection alloc] init];
+        [section3 addMenuItem:func];
+        [self.menuSections addObject:section3];
     }
     return self;
 }
