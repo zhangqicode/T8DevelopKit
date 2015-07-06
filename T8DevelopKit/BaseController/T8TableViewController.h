@@ -11,11 +11,33 @@
 @interface T8TableViewController : T8BaseViewController
 {
     UITableViewStyle _tableViewStyle;
+    
+@private
+    BOOL _shouldLoadTableView;
 }
 
 @property (nonatomic) UITableViewStyle tableViewStyle;
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, assign) BOOL showPullToRefresh;
+@property (nonatomic, assign) BOOL showInfiniteScrolling;
+
 - (id)initWithStyle:(UITableViewStyle)style;
+
+/**
+ * 下拉刷新需要执行的方法
+ */
+- (void)pullToRefreshAction;
+
+/**
+ * 重置下拉刷新状态
+ */
+- (void)stopRefreshAction;
+
+/**
+ * 上拉刷新需要执行得方法
+ */
+- (void)infiniteScrollingAction;
+
 
 @end

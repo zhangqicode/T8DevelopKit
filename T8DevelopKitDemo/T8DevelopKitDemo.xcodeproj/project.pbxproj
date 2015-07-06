@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C8382A1B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */; };
+		42C8382B1B45691B006374B7 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C838291B45691B006374B7 /* UIScrollView+SVPullToRefresh.m */; };
 		42D03BBA1B43EDA00076FF1A /* UIActionSheet+T8.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D03BB91B43EDA00076FF1A /* UIActionSheet+T8.m */; };
 		42D03BBD1B43F7500076FF1A /* UIAlertView+T8.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D03BBC1B43F7500076FF1A /* UIAlertView+T8.m */; };
 		6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C281B41071B00B3AE4D /* T8BaseNavigationController.m */; };
@@ -66,6 +68,11 @@
 
 /* Begin PBXFileReference section */
 		3117F296C76E240CBFAF6070 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		42C838251B45691B006374B7 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		42C838261B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		42C838281B45691B006374B7 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		42C838291B45691B006374B7 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		42D03BB81B43EDA00076FF1A /* UIActionSheet+T8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+T8.h"; sourceTree = "<group>"; };
 		42D03BB91B43EDA00076FF1A /* UIActionSheet+T8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+T8.m"; sourceTree = "<group>"; };
 		42D03BBB1B43F7500076FF1A /* UIAlertView+T8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+T8.h"; sourceTree = "<group>"; };
@@ -178,6 +185,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42C838241B45691B006374B7 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				42C838251B45691B006374B7 /* SVPullToRefresh.h */,
+				42C838261B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.h */,
+				42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */,
+				42C838281B45691B006374B7 /* UIScrollView+SVPullToRefresh.h */,
+				42C838291B45691B006374B7 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		593D20906F33BB3611F77ADF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +366,7 @@
 				6DC396A91B1C849B00270D0D /* T8DevelopKit.h */,
 				6DC396991B1C82EA00270D0D /* T8Defines.h */,
 				6D177C261B41071B00B3AE4D /* BaseController */,
+				42C838241B45691B006374B7 /* SVPullToRefresh */,
 				6D8E20FF1B33EF1C005BC0F5 /* T8MenuTableViewController */,
 				6D25D98F1B254C0300588FDF /* MBProgressHUD */,
 				6DC396811B1C82EA00270D0D /* Assistant&Helper */,
@@ -547,6 +567,7 @@
 				42D03BBD1B43F7500076FF1A /* UIAlertView+T8.m in Sources */,
 				6D8E21101B33F743005BC0F5 /* T8MenuTitleCell.m in Sources */,
 				6DC3969E1B1C82EA00270D0D /* NSMutableDictionary+T8.m in Sources */,
+				42C8382B1B45691B006374B7 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */,
 				6DC3969C1B1C82EA00270D0D /* NSDateFormatter+T8.m in Sources */,
 				6D5C368E1B3A96D30015364D /* T8MenuSection.m in Sources */,
@@ -558,6 +579,7 @@
 				6DB9494E1B4A4F3F00C2B83A /* T8MenuFunctionItem.m in Sources */,
 				6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */,
 				6DC396A11B1C82EA00270D0D /* UIImage+T8.m in Sources */,
+				42C8382A1B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6D8E210D1B33F4CA005BC0F5 /* T8MenuTitleItem.m in Sources */,
 				6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */,
 				6DB9494B1B4A4F0500C2B83A /* T8MenuFunctionCell.m in Sources */,

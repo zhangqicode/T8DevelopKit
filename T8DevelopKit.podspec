@@ -106,6 +106,10 @@ Pod::Spec.new do |s|
     ss.source_files = "T8DevelopKit/MBProgressHUD/*.{h,m}"
   end
 
+  s.subspec "SVPullToRefresh" do |ss|
+    ss.source_files = "T8DevelopKit/SVPullToRefresh/*.{h,m}"
+  end
+
   s.subspec "T8MenuTableViewController" do |ss|
 
     ss.source_files = "T8DevelopKit/T8MenuTableViewController/*.{h,m}"

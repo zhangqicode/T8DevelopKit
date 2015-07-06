@@ -16,4 +16,6 @@
 
 - (void)addMenuItem:(T8MenuItem *)item;
 
+- (void)removeMenuItem:(T8MenuItem *)item;
+
 @end
