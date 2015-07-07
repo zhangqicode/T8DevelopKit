@@ -44,6 +44,7 @@
             [self.tableView addInfiniteScrollingWithActionHandler:^{
                 [weakSelf performSelectorOnMainThread:@selector(infiniteScrollingAction) withObject:nil waitUntilDone:YES];
             }];
+            self.tableView.showsInfiniteScrolling = NO;
         }
     }
 }
