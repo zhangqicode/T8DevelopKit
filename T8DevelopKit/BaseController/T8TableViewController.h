@@ -12,7 +12,7 @@
 {
     UITableViewStyle _tableViewStyle;
     
-@private
+    @private
     BOOL _shouldLoadTableView;
 }
 
@@ -21,6 +21,10 @@
 
 @property (nonatomic, assign) BOOL showPullToRefresh;
 @property (nonatomic, assign) BOOL showInfiniteScrolling;
+
+@property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSInteger limit;
+@property (nonatomic, assign) NSTimeInterval timestamp;
 
 - (id)initWithStyle:(UITableViewStyle)style;
 
@@ -38,6 +42,11 @@
  * 上拉刷新需要执行得方法
  */
 - (void)infiniteScrollingAction;
+
+/**
+ *  重置上拉滚动状态
+ */
+- (void)stopInfiniteAction;
 
 
 @end

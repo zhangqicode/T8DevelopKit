@@ -53,6 +53,7 @@
     [super viewDidLoad];
     
     _shouldLoadTableView = YES;
+    
     if (![self.view.subviews containsObject:self.tableView])
         [self.view addSubview:self.tableView];
     
@@ -60,6 +61,10 @@
     self.tableView.dataSource = self;
     self.showPullToRefresh = NO;     // default is NO
     self.showInfiniteScrolling = NO; // default is NO
+    
+    self.currentPage = 1;
+    self.limit = 20;
+    self.timestamp = 0.0f;
 }
 
 - (UITableView *)tableView
@@ -106,6 +111,11 @@
 - (void)stopRefreshAction
 {
     [self.tableView.pullToRefreshView stopAnimating];
+}
+
+- (void)stopInfiniteAction
+{
+    [self.tableView.infiniteScrollingView stopAnimating];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *) __unused tableView
