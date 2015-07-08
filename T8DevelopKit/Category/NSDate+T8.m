@@ -176,6 +176,14 @@
     return date;
 }
 
++ (NSString *)getT8TimeStampFromDate:(NSDate *)date
+{
+    NSString *format = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    NSDateFormatter *formatter = [NSDateFormatter dateFormatterWithFormat:format];
+    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    return [formatter stringFromDate:date];
+}
+
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond {
     NSDate *ret = nil;
     double timeInterval = timeIntervalInMilliSecond;

@@ -30,6 +30,7 @@
 - (NSString *)getTimeStamp;
 + (NSString *)getT8TimeStamp;
 + (NSDate *)getDateFromT8TimeStamp:(NSString *)timeStamp;
++ (NSString *)getT8TimeStampFromDate:(NSDate *)date;
 // Relative dates from the current date
 + (NSDate *) dateTomorrow;
 + (NSDate *) dateYesterday;
