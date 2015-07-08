@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42A27A781B4CDC8600052752 /* pulltorefresh_arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A27A761B4CDC8600052752 /* pulltorefresh_arrow@3x.png */; };
-		42A27A791B4CDC8600052752 /* pulltorefresh_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A27A771B4CDC8600052752 /* pulltorefresh_arrow@2x.png */; };
 		42C8382A1B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */; };
 		42C8382B1B45691B006374B7 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C838291B45691B006374B7 /* UIScrollView+SVPullToRefresh.m */; };
 		42D03BBA1B43EDA00076FF1A /* UIActionSheet+T8.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D03BB91B43EDA00076FF1A /* UIActionSheet+T8.m */; };
@@ -70,8 +68,6 @@
 
 /* Begin PBXFileReference section */
 		3117F296C76E240CBFAF6070 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		42A27A761B4CDC8600052752 /* pulltorefresh_arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulltorefresh_arrow@3x.png"; sourceTree = "<group>"; };
-		42A27A771B4CDC8600052752 /* pulltorefresh_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pulltorefresh_arrow@2x.png"; sourceTree = "<group>"; };
 		42C838251B45691B006374B7 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		42C838261B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
@@ -192,8 +188,6 @@
 		42C838241B45691B006374B7 /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				42A27A761B4CDC8600052752 /* pulltorefresh_arrow@3x.png */,
-				42A27A771B4CDC8600052752 /* pulltorefresh_arrow@2x.png */,
 				42C838251B45691B006374B7 /* SVPullToRefresh.h */,
 				42C838261B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.h */,
 				42C838271B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m */,
@@ -513,9 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DC396661B1C823500270D0D /* Main.storyboard in Resources */,
-				42A27A781B4CDC8600052752 /* pulltorefresh_arrow@3x.png in Resources */,
 				6DC3966B1B1C823500270D0D /* LaunchScreen.xib in Resources */,
-				42A27A791B4CDC8600052752 /* pulltorefresh_arrow@2x.png in Resources */,
 				6DC396681B1C823500270D0D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
