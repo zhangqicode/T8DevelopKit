@@ -53,6 +53,9 @@
 {
     [super viewDidLoad];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     _shouldLoadTableView = YES;
     
     if (![self.view.subviews containsObject:self.tableView])
