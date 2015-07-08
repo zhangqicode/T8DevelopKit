@@ -11,7 +11,7 @@
 #import "T8MenuItem.h"
 #import "T8MenuDescriptionCell.h"
 
-@interface T8MenuTableViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface T8MenuTableViewController ()
 
 @end
 
