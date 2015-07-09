@@ -74,6 +74,7 @@
 - (UITableView *)tableView
 {
     CGRect frame = self.view.bounds;
+    frame.size.height -= 64;
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:frame style:_tableViewStyle];
         _tableView.backgroundColor = [UIColor clearColor];
