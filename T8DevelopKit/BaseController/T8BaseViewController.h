@@ -24,7 +24,7 @@
 - (void)setRightBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
 - (UIBarButtonItem *)navigationDefaultItemWithTitle:(NSString *)title Target:(id)target action:(SEL)action;
-- (UIBarButtonItem *)navigationDefaultItemWithImage:(UIImage *)image Target:(id)target action:(SEL)action;
+- (UIBarButtonItem *)navigationDefaultItemWithImageNamed:(NSString *)imageName Target:(id)target action:(SEL)action;
 
 - (UIBarButtonItem *)leftBarButtonItem;
 - (UIBarButtonItem *)rightBarButtonItem;
