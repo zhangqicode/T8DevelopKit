@@ -72,6 +72,16 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, barButtonItem, nil];
 }
 
+- (void)setLeftBarButtonItems:(NSArray *)barButtonItems
+{
+    self.navigationItem.leftBarButtonItems = barButtonItems;
+}
+
+- (void)setRightBarButtonItems:(NSArray *)barButtonItems
+{
+    self.navigationItem.rightBarButtonItems = barButtonItems;
+}
+
 - (void)setLeftBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
     UIBarButtonItem *item = [self navigationDefaultItemWithTitle:title Target:target action:action];
@@ -125,6 +135,16 @@
 {
     UIButton *btn = [self makeDefaultItemButton];
     [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn sizeToFit];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
+- (UIBarButtonItem *)navigationDefaultItemWithImage:(UIImage *)image Target:(id)target action:(SEL)action
+{
+    UIButton *btn = [self makeDefaultItemButton];
+    [btn setImage:image forState:UIControlStateNormal];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [btn sizeToFit];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
