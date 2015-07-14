@@ -37,6 +37,8 @@
             [self.tableView addPullToRefreshWithActionHandler:^{
                 [weakSelf performSelectorOnMainThread:@selector(pullToRefreshAction) withObject:nil waitUntilDone:YES];
             }];
+            self.automaticallyAdjustsScrollViewInsets = NO;
+            self.edgesForExtendedLayout = UIRectEdgeNone;
         }
         
         // 添加无限下翻功能
@@ -52,9 +54,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _shouldLoadTableView = YES;
     

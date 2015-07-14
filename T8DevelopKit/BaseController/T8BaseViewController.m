@@ -72,6 +72,32 @@
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:negativeSpacer, barButtonItem, nil];
 }
 
+- (void)setLeftBarButtonItems:(NSArray *)barButtonItems
+{
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -10;
+    
+    NSMutableArray *items = [barButtonItems mutableCopy];
+    [items insertObject:negativeSpacer atIndex:0];
+    
+    self.navigationItem.leftBarButtonItems = items;
+}
+
+- (void)setRightBarButtonItems:(NSArray *)barButtonItems
+{
+    UIBarButtonItem *negativeSpacer = [[UIBarButtonItem alloc]
+                                       initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                       target:nil action:nil];
+    negativeSpacer.width = -10;
+    
+    NSMutableArray *items = [barButtonItems mutableCopy];
+    [items insertObject:negativeSpacer atIndex:0];
+    
+    self.navigationItem.rightBarButtonItems = items;
+}
+
 - (void)setLeftBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action
 {
     UIBarButtonItem *item = [self navigationDefaultItemWithTitle:title Target:target action:action];
@@ -125,6 +151,16 @@
 {
     UIButton *btn = [self makeDefaultItemButton];
     [btn setTitle:title forState:UIControlStateNormal];
+    [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    [btn sizeToFit];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
+- (UIBarButtonItem *)navigationDefaultItemWithImageNamed:(NSString *)imageName Target:(id)target action:(SEL)action
+{
+    UIButton *btn = [self makeDefaultItemButton];
+    [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     [btn sizeToFit];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
