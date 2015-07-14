@@ -13,6 +13,7 @@
 #import "T8MenuTextViewItem.h"
 #import "T8MenuTitleCustomViewItem.h"
 #import "T8MenuFunctionItem.h"
+#import "T8MenuSwitchItem.h"
 
 @interface TestMenuViewController ()
 
@@ -49,10 +50,12 @@
         self.custom1 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"111111111111111111111111111111111111111111111111111111111111111111111" indicator:NO customView:customView1];
         UIImageView *customView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"female"]];
         T8MenuTitleCustomViewItem *custom2 = [[T8MenuTitleCustomViewItem alloc] initWithTitle:@"222222222222222222222222222222222222222222222222222222222222222222222222" indicator:YES customView:customView2];
+        T8MenuSwitchItem *switchItem = [[T8MenuSwitchItem alloc] initWithTitle:@"评论" isOn:YES];
         T8MenuSection *section2 = [[T8MenuSection alloc] init];
         [section2 addMenuItem:he];
         [section2 addMenuItem:self.custom1];
         [section2 addMenuItem:custom2];
+        [section2 addMenuItem:switchItem];
         section2.sectionEdgeInsets = UIEdgeInsetsMake(30, 0, 20, 0);
         [self.menuSections addObject:section2];
         
@@ -79,6 +82,18 @@
     view.backgroundColor = [UIColor redColor];
     view.frame = CGRectMake(0, 0, 50, 30);
     self.custom1.customView = view;
+}
+
+- (void)recieveMenuItemEvent:(NSString *)path item:(T8MenuItem *)item
+{
+    if ([path isEqualToString:MenuItemPathSwitch]) {
+        T8MenuSwitchItem *switchItem = (T8MenuSwitchItem *)item;
+        if ([switchItem isOn]) {
+            NSLog(@"on...");
+        }else{
+            NSLog(@"off...");
+        }
+    }
 }
 
 @end

@@ -8,7 +8,6 @@
 
 #import "T8MenuTableViewController.h"
 #import "T8Defines.h"
-#import "T8MenuItem.h"
 #import "T8MenuDescriptionCell.h"
 
 @interface T8MenuTableViewController ()
@@ -80,6 +79,7 @@
     T8MenuSection *section = [self.menuSections objectAtIndex:indexPath.section];
     NSMutableArray *sectionArr = section.items;
     T8MenuItem *item = [sectionArr objectAtIndex:indexPath.row];
+    item.delegate = self;
     T8MenuCell *cell = item.cell;
     if (indexPath.row==0) {
         if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
@@ -100,6 +100,7 @@
     }else{
         [cell showTopLine:NO bottomLine:YES];
     }
+
     return cell;
 }
 
@@ -154,6 +155,12 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+}
+
+#pragma mark - T8MenuItemDelegate
+- (void)recieveMenuItemEvent:(NSString *)path item:(T8MenuItem *)item
+{
+    
 }
 
 @end

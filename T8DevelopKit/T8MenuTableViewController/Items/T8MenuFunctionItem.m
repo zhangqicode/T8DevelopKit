@@ -16,6 +16,7 @@
     self = [super init];
     if (self) {
         self.cell = [[T8MenuFunctionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        self.cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         ((T8MenuFunctionCell *)self.cell).titleLabel.text = title;
     }

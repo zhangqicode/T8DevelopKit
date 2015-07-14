@@ -9,9 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "T8MenuCell.h"
 
+static NSString *const MenuItemPathSwitch = @"MenuItemPathSwitch";
+
+@class T8MenuItem;
+
+@protocol T8MenuItemDelegate <NSObject>
+
+- (void)recieveMenuItemEvent:(NSString *)path item:(T8MenuItem *)item;
+
+@end
+
 @interface T8MenuItem : NSObject
 
 @property (nonatomic) T8MenuCell *cell;
+@property (nonatomic,weak) id<T8MenuItemDelegate> delegate;
 
 - (CGFloat)itemHeight;
 
