@@ -37,8 +37,6 @@
             [self.tableView addPullToRefreshWithActionHandler:^{
                 [weakSelf performSelectorOnMainThread:@selector(pullToRefreshAction) withObject:nil waitUntilDone:YES];
             }];
-            self.automaticallyAdjustsScrollViewInsets = NO;
-            self.edgesForExtendedLayout = UIRectEdgeNone;
         }
         
         // 添加无限下翻功能
@@ -48,6 +46,8 @@
             }];
             self.tableView.showsInfiniteScrolling = NO;
         }
+        
+        self.tableView.pullToRefreshView.originalTopInset = 64;
     }
 }
 
@@ -66,7 +66,7 @@
     self.showInfiniteScrolling = NO; // default is NO
     
     self.currentPage = 1;
-    self.limit = 20;
+    self.limit = 12;
     self.timestamp = 0.0f;
 }
 
