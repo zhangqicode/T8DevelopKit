@@ -9,7 +9,7 @@
 #import "T8TableViewController.h"
 #import "SVPullToRefresh.h"
 
-@interface T8TableViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface T8TableViewController ()
 
 @end
 

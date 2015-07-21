@@ -8,7 +8,7 @@
 
 #import "T8BaseViewController.h"
 
-@interface T8TableViewController : T8BaseViewController
+@interface T8TableViewController : T8BaseViewController<UITableViewDataSource,UITableViewDelegate>
 {
     UITableViewStyle _tableViewStyle;
     
