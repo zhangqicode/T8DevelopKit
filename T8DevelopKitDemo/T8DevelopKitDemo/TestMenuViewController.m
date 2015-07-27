@@ -18,6 +18,7 @@
 @interface TestMenuViewController ()
 
 @property (nonatomic) T8MenuTitleCustomViewItem *custom1;
+@property (nonatomic) T8MenuTitleItem *subTitleItem;
 
 @end
 
@@ -29,7 +30,8 @@
     if (self) {
         T8MenuTitleItem *item = [[T8MenuTitleItem alloc] initWithTitle:@"123" indicator:YES subTitle:@"faweijgoijoiawefiauwhegiuawhfeiawjefiawhgruiafhiuw"];
         item.title = @"321";
-        T8MenuTitleItem *itemm = [[T8MenuTitleItem alloc] initWithTitle:@"gwae" indicator:NO subTitle:@"fawuhuhgauweuyfawguyhghgiwaufoerogoiawjfiuahweugh"];
+        T8MenuTitleItem *itemm = [[T8MenuTitleItem alloc] initWithTitle:@"gwae" indicator:NO subTitle:nil];
+        self.subTitleItem = itemm;
         T8MenuTextFieldItem *textFieldItem = [[T8MenuTextFieldItem alloc] initWithPlaceHolder:@"name" initialValue:@"zhangqi"];
         textFieldItem.text = @"qizhang";
         T8MenuDescriptionItem *descItem = [[T8MenuDescriptionItem alloc] initWithDescription:@"群ID将用于群组的URL或搜索群组，群ID不可以于现有的重复fawefafweawefw"];
@@ -82,6 +84,8 @@
     view.backgroundColor = [UIColor redColor];
     view.frame = CGRectMake(0, 0, 50, 30);
     self.custom1.customView = view;
+    
+    self.subTitleItem.subTitle = @"fwaefaw";
 }
 
 - (void)recieveMenuItemEvent:(NSString *)path item:(T8MenuItem *)item
