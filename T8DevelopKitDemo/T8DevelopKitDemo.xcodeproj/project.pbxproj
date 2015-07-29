@@ -37,6 +37,10 @@
 		6D8E211C1B3915DD005BC0F5 /* T8MenuDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E211B1B3915DD005BC0F5 /* T8MenuDescriptionCell.m */; };
 		6DA0CB071B298D9600C4C2E7 /* T8CameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB051B298D9600C4C2E7 /* T8CameraHelper.m */; };
 		6DA0CB131B2C22FF00C4C2E7 /* T8UserDefaultHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA0CB121B2C22FF00C4C2E7 /* T8UserDefaultHelper.m */; };
+		6DB7F7491B68BB65006AA9E4 /* T8ATBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7F7421B68BB65006AA9E4 /* T8ATBCell.m */; };
+		6DB7F74A1B68BB65006AA9E4 /* T8AvatarAndTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7F7441B68BB65006AA9E4 /* T8AvatarAndTitleCell.m */; };
+		6DB7F74B1B68BB65006AA9E4 /* T8BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7F7461B68BB65006AA9E4 /* T8BaseTableViewCell.m */; };
+		6DB7F74C1B68BB65006AA9E4 /* T8InsetsTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB7F7481B68BB65006AA9E4 /* T8InsetsTextField.m */; };
 		6DB9494B1B4A4F0500C2B83A /* T8MenuFunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9494A1B4A4F0500C2B83A /* T8MenuFunctionCell.m */; };
 		6DB9494E1B4A4F3F00C2B83A /* T8MenuFunctionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB9494D1B4A4F3F00C2B83A /* T8MenuFunctionItem.m */; };
 		6DC3965D1B1C823500270D0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC3965C1B1C823500270D0D /* main.m */; };
@@ -130,6 +134,14 @@
 		6DA0CB061B298D9600C4C2E7 /* T8CameraHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8CameraHelper.h; sourceTree = "<group>"; };
 		6DA0CB111B2C22FF00C4C2E7 /* T8UserDefaultHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8UserDefaultHelper.h; sourceTree = "<group>"; };
 		6DA0CB121B2C22FF00C4C2E7 /* T8UserDefaultHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8UserDefaultHelper.m; sourceTree = "<group>"; };
+		6DB7F7411B68BB65006AA9E4 /* T8ATBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8ATBCell.h; sourceTree = "<group>"; };
+		6DB7F7421B68BB65006AA9E4 /* T8ATBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8ATBCell.m; sourceTree = "<group>"; };
+		6DB7F7431B68BB65006AA9E4 /* T8AvatarAndTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8AvatarAndTitleCell.h; sourceTree = "<group>"; };
+		6DB7F7441B68BB65006AA9E4 /* T8AvatarAndTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8AvatarAndTitleCell.m; sourceTree = "<group>"; };
+		6DB7F7451B68BB65006AA9E4 /* T8BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8BaseTableViewCell.h; sourceTree = "<group>"; };
+		6DB7F7461B68BB65006AA9E4 /* T8BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8BaseTableViewCell.m; sourceTree = "<group>"; };
+		6DB7F7471B68BB65006AA9E4 /* T8InsetsTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8InsetsTextField.h; sourceTree = "<group>"; };
+		6DB7F7481B68BB65006AA9E4 /* T8InsetsTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8InsetsTextField.m; sourceTree = "<group>"; };
 		6DB949491B4A4F0500C2B83A /* T8MenuFunctionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuFunctionCell.h; sourceTree = "<group>"; };
 		6DB9494A1B4A4F0500C2B83A /* T8MenuFunctionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuFunctionCell.m; sourceTree = "<group>"; };
 		6DB9494C1B4A4F3F00C2B83A /* T8MenuFunctionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuFunctionItem.h; sourceTree = "<group>"; };
@@ -305,6 +317,29 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		6DB7F73F1B68BB65006AA9E4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				6DB7F7401B68BB65006AA9E4 /* Cells */,
+				6DB7F7471B68BB65006AA9E4 /* T8InsetsTextField.h */,
+				6DB7F7481B68BB65006AA9E4 /* T8InsetsTextField.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6DB7F7401B68BB65006AA9E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6DB7F7411B68BB65006AA9E4 /* T8ATBCell.h */,
+				6DB7F7421B68BB65006AA9E4 /* T8ATBCell.m */,
+				6DB7F7431B68BB65006AA9E4 /* T8AvatarAndTitleCell.h */,
+				6DB7F7441B68BB65006AA9E4 /* T8AvatarAndTitleCell.m */,
+				6DB7F7451B68BB65006AA9E4 /* T8BaseTableViewCell.h */,
+				6DB7F7461B68BB65006AA9E4 /* T8BaseTableViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6DC3964E1B1C823500270D0D = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +410,7 @@
 			children = (
 				6DC396A91B1C849B00270D0D /* T8DevelopKit.h */,
 				6DC396991B1C82EA00270D0D /* T8Defines.h */,
+				6DB7F73F1B68BB65006AA9E4 /* Components */,
 				6D177C261B41071B00B3AE4D /* BaseController */,
 				42C838241B45691B006374B7 /* SVPullToRefresh */,
 				6D8E20FF1B33EF1C005BC0F5 /* T8MenuTableViewController */,
@@ -579,6 +615,7 @@
 				6DC3969E1B1C82EA00270D0D /* NSMutableDictionary+T8.m in Sources */,
 				42C8382B1B45691B006374B7 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */,
+				6DB7F74C1B68BB65006AA9E4 /* T8InsetsTextField.m in Sources */,
 				6DC3969C1B1C82EA00270D0D /* NSDateFormatter+T8.m in Sources */,
 				6D5C368E1B3A96D30015364D /* T8MenuSection.m in Sources */,
 				6D8E21131B39121C005BC0F5 /* T8MenuTextFieldItem.m in Sources */,
@@ -587,9 +624,11 @@
 				6D8E211C1B3915DD005BC0F5 /* T8MenuDescriptionCell.m in Sources */,
 				6DC396601B1C823500270D0D /* AppDelegate.m in Sources */,
 				6D0125DD1B54A621003E04D8 /* T8MenuSwitchItem.m in Sources */,
+				6DB7F74B1B68BB65006AA9E4 /* T8BaseTableViewCell.m in Sources */,
 				6DB9494E1B4A4F3F00C2B83A /* T8MenuFunctionItem.m in Sources */,
 				6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */,
 				6DC396A11B1C82EA00270D0D /* UIImage+T8.m in Sources */,
+				6DB7F7491B68BB65006AA9E4 /* T8ATBCell.m in Sources */,
 				42C8382A1B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6D8E210D1B33F4CA005BC0F5 /* T8MenuTitleItem.m in Sources */,
 				6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */,
@@ -598,6 +637,7 @@
 				6DC396A01B1C82EA00270D0D /* NSString+T8.m in Sources */,
 				6DC3969B1B1C82EA00270D0D /* NSDate+T8.m in Sources */,
 				6D177C2F1B41071B00B3AE4D /* T8TableViewController.m in Sources */,
+				6DB7F74A1B68BB65006AA9E4 /* T8AvatarAndTitleCell.m in Sources */,
 				6D8E20FE1B33EEDA005BC0F5 /* TestMenuViewController.m in Sources */,
 				6D5C36881B3A663F0015364D /* T8MenuTextViewItem.m in Sources */,
 				6D0125DA1B54A60A003E04D8 /* T8MenuSwitchCell.m in Sources */,
