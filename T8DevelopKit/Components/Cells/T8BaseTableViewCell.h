@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Masonry.h>
+#import "T8Defines.h"
 
 @interface T8BaseTableViewCell : UITableViewCell
 {
