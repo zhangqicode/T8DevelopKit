@@ -132,6 +132,14 @@ Pod::Spec.new do |s|
     ss.source_files = "T8DevelopKit/BaseController/*.{h,m}"
   end
 
+  s.subspec "Components" do |ss|
+    ss.source_files = "T8DevelopKit/Components/*.{h,m}"
+
+    ss.subspec "Cells" do |sss|
+      sss.source_files = "T8DevelopKit/Components/Cells/*.{h,m}"
+    end
+  end  
+
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
