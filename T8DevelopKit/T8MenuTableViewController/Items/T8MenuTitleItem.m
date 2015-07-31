@@ -36,8 +36,16 @@
             }];
         }
         ((T8MenuTitleCell *)self.cell).subTitleLabel.text = subTitle;
+        [self.cell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)]];
     }
     return self;
+}
+
+- (void)cellTapped:(UITapGestureRecognizer *)gesture
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recieveMenuItemEvent:item:)]) {
+        [self.delegate recieveMenuItemEvent:T8MenuTitleItemTap item:self];
+    }
 }
 
 - (CGFloat)itemHeight

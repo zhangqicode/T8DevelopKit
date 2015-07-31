@@ -8,6 +8,8 @@
 
 #import "T8MenuItem.h"
 
+static NSString *const T8MenuTitleItemTap = @"T8MenuTitleItemTap";
+
 @interface T8MenuTitleItem : T8MenuItem
 
 @property (nonatomic) NSString *title;
