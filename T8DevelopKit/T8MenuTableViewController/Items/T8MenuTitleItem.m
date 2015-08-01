@@ -36,7 +36,6 @@
             }];
         }
         ((T8MenuTitleCell *)self.cell).subTitleLabel.text = subTitle;
-        [self.cell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)]];
     }
     return self;
 }

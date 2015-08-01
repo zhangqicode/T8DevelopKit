@@ -8,6 +8,8 @@
 
 #import "T8MenuItem.h"
 
+static NSString *const T8MenuTitleCustomViewItemTap = @"T8MenuTitleCustomViewItemTap";
+
 @interface T8MenuTitleCustomViewItem : T8MenuItem
 
 @property (nonatomic) UIView *customView;

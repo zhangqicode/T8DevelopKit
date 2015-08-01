@@ -32,6 +32,13 @@
     return 45;
 }
 
+- (void)cellTapped:(UITapGestureRecognizer *)gesture
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recieveMenuItemEvent:item:)]) {
+        [self.delegate recieveMenuItemEvent:T8MenuTitleCustomViewItemTap item:self];
+    }
+}
+
 #pragma mark - getter
 - (UIView *)customView
 {

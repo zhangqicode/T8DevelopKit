@@ -19,7 +19,6 @@
         self.cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         ((T8MenuFunctionCell *)self.cell).titleLabel.text = title;
-        [self.cell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)]];
     }
     return self;
 }
