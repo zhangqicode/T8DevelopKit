@@ -8,6 +8,8 @@
 
 #import "T8MenuItem.h"
 
+static NSString *const T8MenuFunctionItemTap = @"T8MenuFunctionItemTap";
+
 @interface T8MenuFunctionItem : T8MenuItem
 
 - (id)initWithFunctionTitle:(NSString *)title;
