@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        [self.cell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)]]; 
+        
     }
     return self;
 }
@@ -22,6 +22,13 @@
 - (CGFloat)itemHeight
 {
     return 0;
+}
+
+- (void)setCell:(T8MenuCell *)cell
+{
+    _cell = cell;
+    
+    [self.cell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cellTapped:)]];
 }
 
 - (void)cellTapped:(UITapGestureRecognizer *)gesture
