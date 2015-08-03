@@ -14,6 +14,7 @@
 #import "T8MenuTitleCustomViewItem.h"
 #import "T8MenuFunctionItem.h"
 #import "T8MenuSwitchItem.h"
+#import "T8CameraHelper.h"
 
 @interface TestMenuViewController ()
 
@@ -94,6 +95,9 @@
         T8MenuSwitchItem *switchItem = (T8MenuSwitchItem *)item;
         if ([switchItem isOn]) {
             NSLog(@"on...");
+            [[T8CameraHelper sharedInstance] showVideoPickerViewControllerOnViewController:self compled:^(UIImage *image, NSDictionary *editingInfo) {
+                
+            }];
         }else{
             NSLog(@"off...");
         }

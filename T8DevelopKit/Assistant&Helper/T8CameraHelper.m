@@ -7,6 +7,7 @@
 //
 
 #import "T8CameraHelper.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface T8CameraHelper () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
@@ -38,6 +39,23 @@ DEF_SINGLETON(T8CameraHelper)
     
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相机", @"相册", nil];
     [action showInView:self.parentVC.view];
+}
+
+- (void)showVideoPickerViewControllerOnViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled
+{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        compled(nil, nil);
+        return;
+    }
+    
+    self.didFinishTakeMediaCompled = [compled copy];
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [picker setVideoMaximumDuration:120.0f];
+    [picker setVideoQuality:UIImagePickerControllerQualityType640x480];
+    [picker setMediaTypes:@[(NSString *)kUTTypeMovie]];
+    picker.delegate = self;
+    [viewController presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)showPickerViewControllerSourceType:(UIImagePickerControllerSourceType)sourceType onViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled {

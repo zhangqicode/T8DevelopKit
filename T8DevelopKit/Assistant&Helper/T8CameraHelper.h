@@ -16,6 +16,20 @@ typedef void(^DidFinishTakeMediaCompledBlock)(UIImage *image, NSDictionary *edit
 
 AS_SINGLETON(T8CameraHelper)
 
+/**
+ *  获取图片，从相机或者相册
+ *
+ *  @param viewController
+ *  @param compled        
+ */
 - (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled;
+
+/**
+ *  获取视频，从相机获取
+ *
+ *  @param viewController
+ *  @param compled        
+ */
+- (void)showVideoPickerViewControllerOnViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled;
 
 @end
