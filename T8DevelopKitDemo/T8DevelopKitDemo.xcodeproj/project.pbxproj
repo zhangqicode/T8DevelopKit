@@ -24,7 +24,6 @@
 		6D5C36881B3A663F0015364D /* T8MenuTextViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36871B3A663F0015364D /* T8MenuTextViewItem.m */; };
 		6D5C368B1B3A669B0015364D /* T8MenuTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C368A1B3A669B0015364D /* T8MenuTextViewCell.m */; };
 		6D5C368E1B3A96D30015364D /* T8MenuSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C368D1B3A96D30015364D /* T8MenuSection.m */; };
-		6D7C17771B3045E8009B1D03 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7C17761B3045E8009B1D03 /* Reveal.framework */; };
 		6D8E20FE1B33EEDA005BC0F5 /* TestMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E20FD1B33EEDA005BC0F5 /* TestMenuViewController.m */; };
 		6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E21021B33EF1C005BC0F5 /* T8MenuCell.m */; };
 		6D8E21091B33EF1C005BC0F5 /* T8MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8E21051B33EF1C005BC0F5 /* T8MenuItem.m */; };
@@ -109,7 +108,6 @@
 		6D5C368A1B3A669B0015364D /* T8MenuTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuTextViewCell.m; sourceTree = "<group>"; };
 		6D5C368C1B3A96D30015364D /* T8MenuSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuSection.h; sourceTree = "<group>"; };
 		6D5C368D1B3A96D30015364D /* T8MenuSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuSection.m; sourceTree = "<group>"; };
-		6D7C17761B3045E8009B1D03 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		6D8E20FC1B33EEDA005BC0F5 /* TestMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMenuViewController.h; sourceTree = "<group>"; };
 		6D8E20FD1B33EEDA005BC0F5 /* TestMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMenuViewController.m; sourceTree = "<group>"; };
 		6D8E21011B33EF1C005BC0F5 /* T8MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuCell.h; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D7C17771B3045E8009B1D03 /* Reveal.framework in Frameworks */,
 				7A42BB7BD63A52BA29B4E217 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +360,6 @@
 		6DC396591B1C823500270D0D /* T8DevelopKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6D7C17761B3045E8009B1D03 /* Reveal.framework */,
 				6DC3965E1B1C823500270D0D /* AppDelegate.h */,
 				6DC3965F1B1C823500270D0D /* AppDelegate.m */,
 				6DC396611B1C823500270D0D /* ViewController.h */,
@@ -782,12 +778,7 @@
 				);
 				INFOPLIST_FILE = T8DevelopKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Reveal,
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -804,12 +795,7 @@
 				);
 				INFOPLIST_FILE = T8DevelopKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Reveal,
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
