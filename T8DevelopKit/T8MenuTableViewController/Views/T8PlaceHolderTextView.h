@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, XHInputViewType) {
-    XHInputViewTypeNormal = 0,
-    XHInputViewTypeText,
-    XHInputViewTypeEmotion,
-    XHInputViewTypeShareMenu,
-};
-
 @interface T8PlaceHolderTextView : UITextView
 
 /**
