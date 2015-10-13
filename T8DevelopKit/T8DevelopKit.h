@@ -54,4 +54,7 @@
 #import "T8ATBCell.h"
 #import "T8AvatarAndTitleCell.h"
 
+#import "T8HudHelper.h"
+#import "MBProgressHUD.h"
+
 #endif
