@@ -31,7 +31,7 @@
     MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:window];
     [window addSubview:hud];
     hud.removeFromSuperViewOnHide = YES;
-    hud.labelText = message;
+    hud.labelText = message.length == 0?@"未知错误":message;
     hud.mode = MBProgressHUDModeText;
     [hud showWhileExecuting:@selector(delayTask) onTarget:self withObject:nil animated:YES];
 }
