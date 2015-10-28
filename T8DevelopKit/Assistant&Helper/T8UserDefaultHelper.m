@@ -27,7 +27,7 @@
             }
             [self addObserver:self forKeyPath:key options:NSKeyValueObservingOptionNew context:nil];
         }
-        
+        free(properties);
     }
     return self;
 }
