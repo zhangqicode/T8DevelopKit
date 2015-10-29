@@ -24,6 +24,8 @@ AS_SINGLETON(T8CameraHelper)
  */
 - (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled;
 
+- (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController needEdit:(BOOL)edit compled:(DidFinishTakeMediaCompledBlock)compled;
+
 /**
  *  获取视频，从相机获取
  *

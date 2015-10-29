@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) DidFinishTakeMediaCompledBlock didFinishTakeMediaCompled;
 @property (nonatomic, strong) UIViewController *parentVC;
+@property (nonatomic) BOOL edit;
 
 @end
 
@@ -34,8 +35,14 @@ DEF_SINGLETON(T8CameraHelper)
 
 - (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled
 {
+    [self showPickerViewControllerOnParentVC:viewController needEdit:YES compled:compled];
+}
+
+- (void)showPickerViewControllerOnParentVC:(UIViewController *)viewController needEdit:(BOOL)edit compled:(DidFinishTakeMediaCompledBlock)compled
+{
     self.didFinishTakeMediaCompled = [compled copy];
     self.parentVC = viewController;
+    self.edit = edit;
     
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相机", @"相册", nil];
     [action showInView:self.parentVC.view];
@@ -65,7 +72,7 @@ DEF_SINGLETON(T8CameraHelper)
     }
     self.didFinishTakeMediaCompled = [compled copy];
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.allowsEditing = YES;
+    imagePickerController.allowsEditing = self.edit;
     imagePickerController.delegate = self;
     imagePickerController.sourceType = sourceType;
     [viewController presentViewController:imagePickerController animated:YES completion:NULL];

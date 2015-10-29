@@ -95,7 +95,7 @@
         T8MenuSwitchItem *switchItem = (T8MenuSwitchItem *)item;
         if ([switchItem isOn]) {
             NSLog(@"on...");
-            [[T8CameraHelper sharedInstance] showVideoPickerViewControllerOnViewController:self compled:^(UIImage *image, NSDictionary *editingInfo) {
+            [[T8CameraHelper sharedInstance] showPickerViewControllerOnParentVC:self needEdit:NO compled:^(UIImage *image, NSDictionary *editingInfo) {
                 
             }];
         }else{
