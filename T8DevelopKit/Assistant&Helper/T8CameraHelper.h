@@ -14,6 +14,10 @@ typedef void(^DidFinishTakeMediaCompledBlock)(UIImage *image, NSDictionary *edit
 
 @interface T8CameraHelper : NSObject
 
+@property (nonatomic, copy) DidFinishTakeMediaCompledBlock didFinishTakeMediaCompled;
+@property (nonatomic, strong) UIViewController *parentVC;
+@property (nonatomic) BOOL edit;
+
 AS_SINGLETON(T8CameraHelper)
 
 /**
@@ -33,5 +37,7 @@ AS_SINGLETON(T8CameraHelper)
  *  @param compled        
  */
 - (void)showVideoPickerViewControllerOnViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled;
+
+- (void)showPickerViewControllerSourceType:(UIImagePickerControllerSourceType)sourceType onViewController:(UIViewController *)viewController compled:(DidFinishTakeMediaCompledBlock)compled;
 
 @end

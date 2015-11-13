@@ -11,10 +11,6 @@
 
 @interface T8CameraHelper () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
-@property (nonatomic, copy) DidFinishTakeMediaCompledBlock didFinishTakeMediaCompled;
-@property (nonatomic, strong) UIViewController *parentVC;
-@property (nonatomic) BOOL edit;
-
 @end
 
 @implementation T8CameraHelper
