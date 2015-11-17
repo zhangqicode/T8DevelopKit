@@ -18,7 +18,7 @@
         [self.contentView addSubview:self.switchItem];
         
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(@20);
+            make.left.equalTo(@(leftMargin));
             make.centerY.equalTo(self);
             make.right.lessThanOrEqualTo(self.switchItem).offset(-10);
         }];

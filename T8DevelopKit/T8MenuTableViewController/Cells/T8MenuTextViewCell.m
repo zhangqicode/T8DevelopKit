@@ -17,7 +17,7 @@
         [self.contentView addSubview:self.textView];
         
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(12.5, 16, 12.5, 16));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(12.5, leftMargin - 4, 12.5, 16));
         }];
     }
     return self;

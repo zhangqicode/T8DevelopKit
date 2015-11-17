@@ -20,7 +20,7 @@
         [self.contentView addSubview:self.descriptionLabel];
         
         [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(15, 20, 15, 20));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(15, leftMargin, 15, 20));
         }];
     }
     return self;

@@ -17,7 +17,7 @@
         [self.contentView addSubview:self.textField];
         
         [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 20, 0, 20));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, leftMargin, 0, 20));
         }];
     }
     return self;
