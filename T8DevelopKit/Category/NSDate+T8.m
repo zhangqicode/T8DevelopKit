@@ -91,23 +91,23 @@
         if (hour <= 24 && hour >= 0) {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"HH:mm"];
         }else if (hour < 0 && hour >= -24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天HH:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天 HH:mm"];
         }else {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd hh:mm"];
         }
     }else {
         if (hour >= 0 && hour <= 6) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨hh:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 hh:mm"];
         }else if (hour > 6 && hour <=11 ) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午hh:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午 hh:mm"];
         }else if (hour > 11 && hour <= 17) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午hh:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午 hh:mm"];
         }else if (hour > 17 && hour <= 24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上hh:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上 hh:mm"];
         }else if (hour < 0 && hour >= -24){
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天HH:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天 HH:mm"];
         }else  {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd hh:mm"];
         }
         
     }
