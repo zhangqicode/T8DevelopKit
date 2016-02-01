@@ -15,11 +15,13 @@
 #import "T8MenuFunctionItem.h"
 #import "T8MenuSwitchItem.h"
 #import "T8CameraHelper.h"
+#import "T8MenuCustomItem.h"
 
 @interface TestMenuViewController ()
 
 @property (nonatomic) T8MenuTitleCustomViewItem *custom1;
 @property (nonatomic) T8MenuTitleItem *subTitleItem;
+@property (nonatomic) T8MenuCustomItem *customItem;
 
 @end
 
@@ -66,6 +68,13 @@
         T8MenuSection *section3 = [[T8MenuSection alloc] init];
         [section3 addMenuItem:func];
         [self.menuSections addObject:section3];
+        
+        UIView *view = [[UIView alloc] init];
+        view.backgroundColor = [UIColor greenColor];
+        self.customItem = [[T8MenuCustomItem alloc] initWithCustomView:view height:150];
+        T8MenuSection *section4 = [[T8MenuSection alloc] init];
+        [section4 addMenuItem:self.customItem];
+        [self.menuSections addObject:section4];
     }
     return self;
 }

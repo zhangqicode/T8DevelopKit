@@ -37,6 +37,7 @@
 #import "T8MenuFunctionItem.h"
 #import "T8MenuSwitchItem.h"
 #import "T8MenuSection.h"
+#import "T8MenuCustomItem.h"
 
 #import "T8JsonHelper.h"
 #import "T8SandBoxHelper.h"
@@ -53,6 +54,7 @@
 #import "T8MenuSwitchCell.h"
 #import "T8ATBCell.h"
 #import "T8AvatarAndTitleCell.h"
+#import "T8MenuCustomCell.h"
 
 #import "T8HudHelper.h"
 #import "MBProgressHUD.h"

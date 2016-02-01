@@ -13,6 +13,8 @@
 		42D03BBD1B43F7500076FF1A /* UIAlertView+T8.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D03BBC1B43F7500076FF1A /* UIAlertView+T8.m */; };
 		6D0125DA1B54A60A003E04D8 /* T8MenuSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0125D91B54A60A003E04D8 /* T8MenuSwitchCell.m */; };
 		6D0125DD1B54A621003E04D8 /* T8MenuSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0125DC1B54A621003E04D8 /* T8MenuSwitchItem.m */; };
+		6D0833031C5F96AB00EDC6F0 /* T8MenuCustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0833021C5F96AB00EDC6F0 /* T8MenuCustomItem.m */; };
+		6D0833061C5F96BF00EDC6F0 /* T8MenuCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0833051C5F96BF00EDC6F0 /* T8MenuCustomCell.m */; };
 		6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C281B41071B00B3AE4D /* T8BaseNavigationController.m */; };
 		6D177C2E1B41071B00B3AE4D /* T8BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C2A1B41071B00B3AE4D /* T8BaseViewController.m */; };
 		6D177C2F1B41071B00B3AE4D /* T8TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C2C1B41071B00B3AE4D /* T8TableViewController.m */; };
@@ -86,6 +88,10 @@
 		6D0125D91B54A60A003E04D8 /* T8MenuSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuSwitchCell.m; sourceTree = "<group>"; };
 		6D0125DB1B54A621003E04D8 /* T8MenuSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuSwitchItem.h; sourceTree = "<group>"; };
 		6D0125DC1B54A621003E04D8 /* T8MenuSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuSwitchItem.m; sourceTree = "<group>"; };
+		6D0833011C5F96AB00EDC6F0 /* T8MenuCustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuCustomItem.h; sourceTree = "<group>"; };
+		6D0833021C5F96AB00EDC6F0 /* T8MenuCustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuCustomItem.m; sourceTree = "<group>"; };
+		6D0833041C5F96BF00EDC6F0 /* T8MenuCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuCustomCell.h; sourceTree = "<group>"; };
+		6D0833051C5F96BF00EDC6F0 /* T8MenuCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8MenuCustomCell.m; sourceTree = "<group>"; };
 		6D177C271B41071B00B3AE4D /* T8BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8BaseNavigationController.h; sourceTree = "<group>"; };
 		6D177C281B41071B00B3AE4D /* T8BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8BaseNavigationController.m; sourceTree = "<group>"; };
 		6D177C291B41071B00B3AE4D /* T8BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8BaseViewController.h; sourceTree = "<group>"; };
@@ -287,6 +293,8 @@
 				6DB9494A1B4A4F0500C2B83A /* T8MenuFunctionCell.m */,
 				6D0125D81B54A60A003E04D8 /* T8MenuSwitchCell.h */,
 				6D0125D91B54A60A003E04D8 /* T8MenuSwitchCell.m */,
+				6D0833041C5F96BF00EDC6F0 /* T8MenuCustomCell.h */,
+				6D0833051C5F96BF00EDC6F0 /* T8MenuCustomCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -310,6 +318,8 @@
 				6DB9494D1B4A4F3F00C2B83A /* T8MenuFunctionItem.m */,
 				6D0125DB1B54A621003E04D8 /* T8MenuSwitchItem.h */,
 				6D0125DC1B54A621003E04D8 /* T8MenuSwitchItem.m */,
+				6D0833011C5F96AB00EDC6F0 /* T8MenuCustomItem.h */,
+				6D0833021C5F96AB00EDC6F0 /* T8MenuCustomItem.m */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -624,8 +634,10 @@
 				6DB7F74B1B68BB65006AA9E4 /* T8BaseTableViewCell.m in Sources */,
 				6DB9494E1B4A4F3F00C2B83A /* T8MenuFunctionItem.m in Sources */,
 				6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */,
+				6D0833061C5F96BF00EDC6F0 /* T8MenuCustomCell.m in Sources */,
 				6DC396A11B1C82EA00270D0D /* UIImage+T8.m in Sources */,
 				6DB7F7491B68BB65006AA9E4 /* T8ATBCell.m in Sources */,
+				6D0833031C5F96AB00EDC6F0 /* T8MenuCustomItem.m in Sources */,
 				42C8382A1B45691B006374B7 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6D8E210D1B33F4CA005BC0F5 /* T8MenuTitleItem.m in Sources */,
 				6D177C2D1B41071B00B3AE4D /* T8BaseNavigationController.m in Sources */,
