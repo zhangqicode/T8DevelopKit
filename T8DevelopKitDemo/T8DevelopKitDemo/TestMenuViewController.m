@@ -65,6 +65,7 @@
         [self.menuSections addObject:section2];
         
         T8MenuFunctionItem *func = [[T8MenuFunctionItem alloc] initWithFunctionTitle:@"log out"];
+        [func setTitleColor:[UIColor blueColor]];
         T8MenuSection *section3 = [[T8MenuSection alloc] init];
         [section3 addMenuItem:func];
         [self.menuSections addObject:section3];

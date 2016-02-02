@@ -14,4 +14,6 @@ static NSString *const T8MenuFunctionItemTap = @"T8MenuFunctionItemTap";
 
 - (id)initWithFunctionTitle:(NSString *)title;
 
+- (void)setTitleColor:(UIColor *)color;
+
 @end

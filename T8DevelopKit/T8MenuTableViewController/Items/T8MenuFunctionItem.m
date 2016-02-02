@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)setTitleColor:(UIColor *)color
+{
+    T8MenuFunctionCell *cell = (T8MenuFunctionCell *)self.cell;
+    cell.titleLabel.textColor = color;
+}
+
 - (CGFloat)itemHeight
 {
     return 45;
