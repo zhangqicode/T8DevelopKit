@@ -28,9 +28,9 @@
         if (dateFormatter == nil) {
             dateFormatter = [[self alloc]init];
         }
-        dateFormatter.dateFormat = dateFormat;
         
     });
+    dateFormatter.dateFormat = dateFormat;
     return dateFormatter;
 }
 
