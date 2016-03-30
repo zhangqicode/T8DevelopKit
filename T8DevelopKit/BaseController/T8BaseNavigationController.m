@@ -64,12 +64,6 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        
-        self.interactivePopGestureRecognizer.enabled = NO;
-        
-    }
-    
     if ([self.topViewController isMemberOfClass:[viewController class]]) {
         
         return;
