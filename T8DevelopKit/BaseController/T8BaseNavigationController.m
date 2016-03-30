@@ -9,7 +9,7 @@
 #import "T8BaseNavigationController.h"
 #import "T8Defines.h"
 
-@interface T8BaseNavigationController ()<UIGestureRecognizerDelegate>
+@interface T8BaseNavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -33,6 +33,15 @@
     
     self.interactivePopGestureRecognizer.delegate = self;
     
+    
+    __weak typeof(self) weakSelf = self;
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.delegate = weakSelf;
+        self.delegate = weakSelf;
+    }
+
+    
     // Do any additional setup after loading the view.
 }
 
@@ -51,5 +60,23 @@
         return YES;
     }
 }
+
+
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        
+        self.interactivePopGestureRecognizer.enabled = NO;
+        
+    }
+    
+    if ([self.topViewController isMemberOfClass:[viewController class]]) {
+        
+        return;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
 
 @end
