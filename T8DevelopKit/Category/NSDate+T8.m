@@ -169,6 +169,9 @@
 
 + (NSDate *)getDateFromT8TimeStamp:(NSString *)timeStamp
 {
+    if (![timeStamp isKindOfClass:[NSString class]]) {
+        return nil;
+    }
     NSString *format = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     NSDateFormatter *formatter = [NSDateFormatter dateFormatterWithFormat:format];
     [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
