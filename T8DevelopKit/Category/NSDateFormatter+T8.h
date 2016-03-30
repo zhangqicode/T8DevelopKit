@@ -14,9 +14,9 @@
 
 @interface NSDateFormatter (T8)
 
-+ (id)dateFormatter;
-+ (id)dateFormatterWithFormat:(NSString *)dateFormat;
++ (instancetype)dateFormatter;
++ (instancetype)dateFormatterWithFormat:(NSString *)dateFormat;
 
-+ (id)defaultDateFormatter;/*yyyy-MM-dd HH:mm:ss*/
++ (instancetype)defaultDateFormatter;/*yyyy-MM-dd HH:mm:ss*/
 
 @end

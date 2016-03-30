@@ -14,19 +14,27 @@
 
 @implementation NSDateFormatter (T8)
 
-+ (id)dateFormatter
++ (instancetype)dateFormatter
 {
     return [[self alloc] init];
 }
 
-+ (id)dateFormatterWithFormat:(NSString *)dateFormat
++ (instancetype)dateFormatterWithFormat:(NSString *)dateFormat
 {
-    NSDateFormatter *dateFormatter = [[self alloc] init];
+    
+    static NSDateFormatter *dateFormatter =  nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (dateFormatter == nil) {
+            dateFormatter = [[self alloc]init];
+        }
+        
+    });
     dateFormatter.dateFormat = dateFormat;
     return dateFormatter;
 }
 
-+ (id)defaultDateFormatter
++ (instancetype)defaultDateFormatter
 {
     return [self dateFormatterWithFormat:@"yyyy-MM-dd HH:mm:ss"];
 }
