@@ -21,16 +21,22 @@
 
 + (instancetype)dateFormatterWithFormat:(NSString *)dateFormat
 {
-    
-    static NSDateFormatter *dateFormatter =  nil;
+    static NSMutableDictionary *formatterCache = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (dateFormatter == nil) {
-            dateFormatter = [[self alloc]init];
+        if (formatterCache == nil) {
+            formatterCache = [NSMutableDictionary dictionary];
         }
-        
     });
-    dateFormatter.dateFormat = dateFormat;
+    if (dateFormat == nil) {
+        return nil;
+    }
+    NSDateFormatter *dateFormatter = [formatterCache objectForKey:dateFormat];
+    if (dateFormatter == nil) {
+        dateFormatter = [[self alloc] init];
+        dateFormatter.dateFormat = dateFormat;
+        [formatterCache setObject:dateFormatter forKey:dateFormat];
+    }
     return dateFormatter;
 }
 
