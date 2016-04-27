@@ -61,16 +61,4 @@
     }
 }
 
-
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if ([self.topViewController isMemberOfClass:[viewController class]]) {
-        
-        return;
-    }
-    
-    [super pushViewController:viewController animated:animated];
-}
-
-
 @end
