@@ -231,10 +231,9 @@
 
 - (UIImage *)snapshot
 {
-    CGFloat scale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, YES, 0.0);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, scale);
-    [self drawViewHierarchyInRect:CGRectMake(-17, -17, self.bounds.size.width+34, self.bounds.size.height+34) afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
