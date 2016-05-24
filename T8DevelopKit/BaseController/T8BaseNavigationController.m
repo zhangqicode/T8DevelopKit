@@ -20,7 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
     if (self) {
-        NSDictionary *titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:16.0f],NSForegroundColorAttributeName:UIColorRGB(0x222222)};
+        NSDictionary *titleTextAttributes = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0f],NSForegroundColorAttributeName:UIColorRGB(0x222222)};
         self.navigationBar.titleTextAttributes = titleTextAttributes;
         [self.navigationBar setBarTintColor:UIColorRGB(0xF7F9F8)];
         self.navigationBar.tintColor = UIColorRGB(0x929292);
