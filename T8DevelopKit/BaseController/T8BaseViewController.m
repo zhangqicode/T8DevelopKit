@@ -25,7 +25,7 @@
     
     if (x > 1) {
         // 多余一级的时候，创建返回按钮
-        [self setLeftBarButtonItem:[T8BaseViewController navigationBackButtonItemWithTarget:self action:@selector(popViewController)]];
+        [self setLeftBarButtonItem:[T8BaseViewController navigationBackButtonItemWithTarget:self action:@selector(popViewController) title:self.navigationController.navigationBar.topItem.title]];
     }else{
         [self setLeftBarButtonItem:nil];
     }
@@ -136,10 +136,24 @@
     return self.navigationItem.rightBarButtonItems.lastObject;
 }
 
-+ (UIBarButtonItem *)navigationBackButtonItemWithTarget:(id)target action:(SEL)action
++ (UIBarButtonItem *)navigationBackButtonItemWithTarget:(id)target action:(SEL)action title:(NSString *)title
 {
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.frame = CGRectMake(0, 0, 44, 44);
+    backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+
+    if (title.length && title.length <= 4) {
+        [backButton setTitle:title forState:UIControlStateNormal];
+        backButton.frame = CGRectMake(0, 0, 90, 44);
+    } else {
+        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        backButton.frame = CGRectMake(0, 0, 60, 44);
+    }
+    [backButton setTitleColor:UIColorRGB(0x929292) forState:UIControlStateNormal];
+    [backButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
+
+//    [backButton sizeToFit];
+    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 1, 0, 0);
+    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, -1, 0, 0);
     [backButton setImage:[[UIImage imageNamed:@"back_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
