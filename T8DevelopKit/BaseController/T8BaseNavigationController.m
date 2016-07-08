@@ -62,4 +62,18 @@
     }
 }
 
+#pragma mark - transparent navigation bar
+
+- (void)transparentNavigationBar
+{
+    self.navigationBar.shadowImage = [UIImage new];
+    [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)resetNavigationBar
+{
+    self.navigationBar.shadowImage = nil;
+    [self.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+}
+
 @end

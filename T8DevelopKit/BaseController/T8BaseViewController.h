@@ -14,6 +14,7 @@
 
 #pragma mark Navigation Text Button
 
+- (void)setBackBarButtonItem:(UIBarButtonItem *)barButtonItem;
 - (void)setLeftBarButtonItem:(UIBarButtonItem *)barButtonItem;
 - (void)setRightBarButtonItem:(UIBarButtonItem *)barButtonItem;
 
@@ -26,9 +27,11 @@
 - (UIBarButtonItem *)navigationDefaultItemWithTitle:(NSString *)title Target:(id)target action:(SEL)action;
 - (UIBarButtonItem *)navigationDefaultItemWithImageNamed:(NSString *)imageName Target:(id)target action:(SEL)action;
 
+- (UIBarButtonItem *)backBarButtonItem;
 - (UIBarButtonItem *)leftBarButtonItem;
 - (UIBarButtonItem *)rightBarButtonItem;
 
 + (UIBarButtonItem *)navigationBackButtonItemWithTarget:(id)target action:(SEL)action title:(NSString *)title;
++ (UIBarButtonItem *)customNavigationBackButtonItemWithTarget:(id)target action:(SEL)action title:(NSString *)title;
 
 @end

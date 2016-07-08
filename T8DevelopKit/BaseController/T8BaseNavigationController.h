@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) UIColor *navigationBarColor;
 
+- (void)transparentNavigationBar;
+- (void)resetNavigationBar;
+
 @end
