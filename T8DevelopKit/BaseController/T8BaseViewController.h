@@ -29,4 +29,6 @@
 - (UIBarButtonItem *)leftBarButtonItem;
 - (UIBarButtonItem *)rightBarButtonItem;
 
++ (UIBarButtonItem *)navigationBackButtonItemWithTarget:(id)target action:(SEL)action title:(NSString *)title;
+
 @end
