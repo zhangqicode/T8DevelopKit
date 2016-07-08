@@ -63,6 +63,11 @@
     return ((T8MenuTitleCell *)self.cell).subTitleLabel.text;
 }
 
+- (BOOL)indicator
+{
+    return self.cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator;
+}
+
 #pragma mark - setter
 - (void)setTitle:(NSString *)title
 {
@@ -72,6 +77,23 @@
 - (void)setSubTitle:(NSString *)subTitle
 {
     ((T8MenuTitleCell *)self.cell).subTitleLabel.text = subTitle;
+}
+
+- (void)setIndicator:(BOOL)indicator
+{
+    if (indicator) {
+        self.cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.cell.contentView);
+            make.centerY.equalTo(self.cell.contentView);
+        }];
+    }else{
+        self.cell.accessoryType = UITableViewCellAccessoryNone;
+        [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.cell.contentView).offset(-20);
+            make.centerY.equalTo(self.cell.contentView);
+        }];
+    }
 }
 
 @end

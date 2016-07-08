@@ -14,6 +14,7 @@ static NSString *const T8MenuTitleItemTap = @"T8MenuTitleItemTap";
 
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *subTitle;
+@property (nonatomic) BOOL indicator;
 
 - (id)initWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title indicator:(BOOL)indicator;
