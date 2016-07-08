@@ -172,9 +172,6 @@
     [backButton setTitleColor:UIColorRGB(0x929292) forState:UIControlStateNormal];
     [backButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
 
-//    [backButton sizeToFit];
-    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0);
-    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
     [backButton setImage:[[UIImage imageNamed:@"back_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
