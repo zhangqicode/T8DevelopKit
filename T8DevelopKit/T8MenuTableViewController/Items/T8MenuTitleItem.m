@@ -26,7 +26,8 @@
     self = [super init];
     if (self) {
         self.cell = [[T8MenuTitleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        self.cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.cell.selectedBackgroundView = [[UIView alloc] initWithFrame:self.cell.frame];
+        self.cell.selectedBackgroundView.backgroundColor = UIColorRGB(0xD9D9D9);
         ((T8MenuTitleCell *)self.cell).titleLabel.text = title;
         if (indicator) {
             self.cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
