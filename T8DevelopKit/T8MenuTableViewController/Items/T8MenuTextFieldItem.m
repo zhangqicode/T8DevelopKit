@@ -35,7 +35,7 @@
 
 - (NSString *)text
 {
-    return [((T8MenuTextFieldCell *)self.cell).textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return ((T8MenuTextFieldCell *)self.cell).textField.text;
 }
 
 - (void)setText:(NSString *)text

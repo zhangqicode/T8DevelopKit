@@ -42,7 +42,7 @@
 
 - (NSString *)text
 {
-    return [((T8MenuTextViewCell *)self.cell).textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    return ((T8MenuTextViewCell *)self.cell).textView.text;
 }
 
 - (void)setText:(NSString *)text
