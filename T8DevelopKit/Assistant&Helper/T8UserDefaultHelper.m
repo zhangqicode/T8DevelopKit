@@ -18,9 +18,13 @@
         
         unsigned int count;
         objc_property_t *properties = class_copyPropertyList([self class], &count);
+        NSArray *ignore = [[self class] ignoreProperties];
         for (int i = 0; i < count; i++) {
             objc_property_t property = properties[i];
             NSString * key = [[NSString alloc]initWithCString:property_getName(property)  encoding:NSUTF8StringEncoding];
+            if ([ignore containsObject:key]) {
+                continue;
+            }
             id value = [[NSUserDefaults standardUserDefaults] objectForKey:[self getUserDefaultKeyWithPath:key]];
             if (value) {
                 [self setValue:value forKey:key];
@@ -48,6 +52,11 @@
 - (NSString *)getUserDefaultKeyWithPath:(NSString *)keyPath
 {
     return [NSString stringWithFormat:@"T8UserDefaultKey_%@", keyPath];
+}
+
++ (NSArray *)ignoreProperties
+{
+    return @[];
 }
 
 @end

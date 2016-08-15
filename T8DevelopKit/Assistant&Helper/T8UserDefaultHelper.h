@@ -11,4 +11,6 @@
 
 @interface T8UserDefaultHelper : NSObject
 
++ (NSArray *)ignoreProperties;
+
 @end
