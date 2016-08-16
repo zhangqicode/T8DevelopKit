@@ -22,21 +22,27 @@
 + (instancetype)dateFormatterWithFormat:(NSString *)dateFormat
 {
     static NSMutableDictionary *formatterCache = nil;
+    static NSLock *accessLock = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if (formatterCache == nil) {
             formatterCache = [NSMutableDictionary dictionary];
         }
+        if (accessLock == nil) {
+            accessLock = [[NSLock alloc] init];
+        }
     });
     if (dateFormat == nil) {
         return nil;
     }
+    [accessLock lock];
     NSDateFormatter *dateFormatter = [formatterCache objectForKey:dateFormat];
     if (dateFormatter == nil) {
         dateFormatter = [[self alloc] init];
         dateFormatter.dateFormat = dateFormat;
         [formatterCache setObject:dateFormatter forKey:dateFormat];
     }
+    [accessLock unlock];
     return dateFormatter;
 }
 
