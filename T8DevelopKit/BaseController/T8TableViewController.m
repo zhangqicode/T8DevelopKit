@@ -48,6 +48,7 @@
         }
         
         self.tableView.pullToRefreshView.originalTopInset = 64;
+        [self.tableView.pullToRefreshView setTextColor:[UIColor colorWithRed:130.0/255.0 green:130.0/255.0 blue:130.0/255.0 alpha:1.0]];
     }
 }
 
