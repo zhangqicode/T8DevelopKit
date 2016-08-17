@@ -46,7 +46,7 @@
     if (!_subTitleLabel) {
         _subTitleLabel = [[UILabel alloc] init];
         _subTitleLabel.font = [UIFont systemFontOfSize:15];
-        _subTitleLabel.textColor = UIColorRGB(0xa0a9ae);
+        _subTitleLabel.textColor = UIColorRGB(0x959595);
         _subTitleLabel.textAlignment = NSTextAlignmentRight;
     }
     return _subTitleLabel;
