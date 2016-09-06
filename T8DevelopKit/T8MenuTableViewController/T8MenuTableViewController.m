@@ -111,7 +111,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *header = [[UIView alloc] init];
-    header.backgroundColor = [UIColor clearColor];
+    if (self.sectionHeaderColor) {
+        header.backgroundColor = self.sectionHeaderColor;
+    } else {
+        header.backgroundColor = [UIColor clearColor];
+    }
     return header;
 }
 
@@ -124,7 +128,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *footer = [[UIView alloc] init];
-    footer.backgroundColor = [UIColor clearColor];
+    if (self.sectionFooterColor) {
+        footer.backgroundColor = self.sectionFooterColor;
+    } else {
+        footer.backgroundColor = [UIColor clearColor];
+    }
     return footer;
 }
 
