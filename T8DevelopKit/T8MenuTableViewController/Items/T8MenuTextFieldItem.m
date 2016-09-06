@@ -43,4 +43,9 @@
     ((T8MenuTextFieldCell *)self.cell).textField.text = text;
 }
 
+- (UITextField *)textField
+{
+    return ((T8MenuTextFieldCell *)self.cell).textField;
+}
+
 @end
