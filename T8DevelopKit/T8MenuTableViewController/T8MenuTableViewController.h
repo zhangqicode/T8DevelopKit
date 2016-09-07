@@ -19,4 +19,6 @@
 @property (nonatomic, strong) UIColor *sectionHeaderColor;
 @property (nonatomic, strong) UIColor *sectionFooterColor;
 
+@property (nonatomic, assign) BOOL shouldCustomCellTopLineAndBottomLineDisplay;
+
 @end
