@@ -527,7 +527,8 @@
 				TargetAttributes = {
 					6DC396561B1C823500270D0D = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = G4NS45RA39;
+						DevelopmentTeam = 54KWRA6QCY;
+						ProvisioningStyle = Manual;
 					};
 					6DC3966F1B1C823500270D0D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -784,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 54KWRA6QCY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/T8DevelopKitDemo",
@@ -792,6 +794,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "935066e1-bec2-4a7a-8119-bcdeb1331b84";
+				PROVISIONING_PROFILE_SPECIFIER = wild_dev;
 			};
 			name = Debug;
 		};
@@ -801,6 +805,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 54KWRA6QCY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/T8DevelopKitDemo",
@@ -809,6 +815,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "06c388cd-a85c-455d-8dbc-41c9289d0e33";
+				PROVISIONING_PROFILE_SPECIFIER = wild_pro;
 			};
 			name = Release;
 		};

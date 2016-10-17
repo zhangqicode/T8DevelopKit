@@ -12,6 +12,7 @@
 
 #import "NSDate+T8.h"
 #import "NSDateFormatter+T8.h"
+#import "UIKit/UIKit.h"
 
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -97,7 +98,7 @@
         }
     }else {
         if (hour >= 0 && hour <= 6) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 hh:mm"];
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 HH:mm"];
         }else if (hour > 6 && hour <=11 ) {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午 hh:mm"];
         }else if (hour > 11 && hour <= 17) {
@@ -464,7 +465,14 @@
 - (NSInteger) hoursAfterDate: (NSDate *) aDate
 {
 	NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-	return (NSInteger) (ti / D_HOUR);
+    CGFloat tmp = ti / D_HOUR;
+    if (tmp >= 0 && tmp < 1) {
+        return 1;
+    }else if (tmp < 0 && tmp > -1){
+        return -1;
+    }else{
+        return (NSInteger) (ti / D_HOUR);
+    }
 }
 
 - (NSInteger) hoursBeforeDate: (NSDate *) aDate
