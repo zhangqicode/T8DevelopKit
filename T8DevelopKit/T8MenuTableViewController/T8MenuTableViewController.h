@@ -16,4 +16,9 @@
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *menuSections;
 
+@property (nonatomic, strong) UIColor *sectionHeaderColor;
+@property (nonatomic, strong) UIColor *sectionFooterColor;
+
+@property (nonatomic, assign) BOOL shouldCustomCellTopLineAndBottomLineDisplay;
+
 @end

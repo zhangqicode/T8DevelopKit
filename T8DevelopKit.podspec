@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "T8DevelopKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.5"
   s.summary      = "A short description of T8DevelopKit."
 
   s.description  = <<-DESC
@@ -176,6 +176,6 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.dependency "Masonry", "~> 0.6.1"
 
 end

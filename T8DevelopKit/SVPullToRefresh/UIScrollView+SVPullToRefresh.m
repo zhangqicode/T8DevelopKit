@@ -678,7 +678,7 @@ static char UIScrollViewPullToRefreshView;
 }
 
 - (void)drawRect:(CGRect)rect {
-    UIImage *img = [[UIImage imageNamed:@"pulltorefresh_arrow"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *img = [[UIImage imageNamed:@"pulltorefresh_arrow"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [[UIColor colorWithRed:0 green:122.0/255.0 blue:1 alpha:1] set];
     [img drawInRect:CGRectMake(5, 14, 11, 20)];
 }

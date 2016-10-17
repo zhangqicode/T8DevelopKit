@@ -14,8 +14,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.topLine];
-        [self.contentView addSubview:self.bottomLine];
+        [self addSubview:self.topLine];
+        [self addSubview:self.bottomLine];
         
         [self.topLine mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self);

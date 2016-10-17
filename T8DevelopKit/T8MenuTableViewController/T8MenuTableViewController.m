@@ -79,26 +79,29 @@
     T8MenuItem *item = [sectionArr objectAtIndex:indexPath.row];
     item.delegate = self;
     T8MenuCell *cell = item.cell;
-    if (indexPath.row==0) {
-        if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
-            if (sectionArr.count>1) {
-                [cell showTopLine:NO bottomLine:YES];
+    
+    if (!self.shouldCustomCellTopLineAndBottomLineDisplay) {
+        if (indexPath.row==0) {
+            if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
+                if (sectionArr.count>1) {
+                    [cell showTopLine:NO bottomLine:YES];
+                }else{
+                    [cell showTopLine:NO bottomLine:NO];
+                }
             }else{
-                [cell showTopLine:NO bottomLine:NO];
+                [cell showTopLine:YES bottomLine:YES];
             }
-        }else{
-            [cell showTopLine:YES bottomLine:YES];
-        }
-    }else if (indexPath.row==sectionArr.count-1) {
-        if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
-            [cell showTopLine:NO bottomLine:NO];
+        }else if (indexPath.row==sectionArr.count-1) {
+            if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
+                [cell showTopLine:NO bottomLine:NO];
+            }else{
+                [cell showTopLine:NO bottomLine:YES];
+            }
         }else{
             [cell showTopLine:NO bottomLine:YES];
         }
-    }else{
-        [cell showTopLine:NO bottomLine:YES];
     }
-
+    
     return cell;
 }
 
@@ -111,7 +114,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *header = [[UIView alloc] init];
-    header.backgroundColor = [UIColor clearColor];
+    if (self.sectionHeaderColor) {
+        header.backgroundColor = self.sectionHeaderColor;
+    } else {
+        header.backgroundColor = [UIColor clearColor];
+    }
     return header;
 }
 
@@ -124,7 +131,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *footer = [[UIView alloc] init];
-    footer.backgroundColor = [UIColor clearColor];
+    if (self.sectionFooterColor) {
+        footer.backgroundColor = self.sectionFooterColor;
+    } else {
+        footer.backgroundColor = [UIColor clearColor];
+    }
     return footer;
 }
 

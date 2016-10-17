@@ -11,6 +11,7 @@
 @interface T8MenuTextFieldItem : T8MenuItem
 
 @property (nonatomic) NSString *text;
+@property (nonatomic, strong, readonly) UITextField *textField;
 
 - (id)initWithPlaceHolder:(NSString *)placeHolder;
 - (id)initWithPlaceHolder:(NSString *)placeHolder initialValue:(NSString *)initialValue;
