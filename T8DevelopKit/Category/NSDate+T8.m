@@ -101,7 +101,9 @@
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 HH:mm"];
         }else if (hour > 6 && hour <=11 ) {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午 hh:mm"];
-        }else if (hour > 11 && hour <= 17) {
+        }else if (hour > 11 && hour <= 12) {
+            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"中午 hh:mm"];
+        }else if (hour > 12 && hour <= 17) {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午 hh:mm"];
         }else if (hour > 17 && hour <= 24) {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上 hh:mm"];
