@@ -10,6 +10,8 @@
 
 @interface T8BaseViewController : UIViewController
 
+@property (nonatomic, assign) BOOL appearing;
+
 @property (nonatomic, strong) UIColor *navigationBarColor;
 
 #pragma mark Navigation Text Button

@@ -25,6 +25,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    self.appearing = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -40,6 +42,13 @@
     if (title && title.length > 0) {
         [self setBackBarButtonItem:[T8BaseViewController navigationBackButtonItemWithTarget:self action:@selector(popViewController) title:title]];
     }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    self.appearing = NO;
 }
 
 - (void)didReceiveMemoryWarning {
