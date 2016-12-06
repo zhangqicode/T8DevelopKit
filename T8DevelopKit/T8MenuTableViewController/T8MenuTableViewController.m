@@ -114,6 +114,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *header = [[UIView alloc] init];
+    header.userInteractionEnabled = NO;
     if (self.sectionHeaderColor) {
         header.backgroundColor = self.sectionHeaderColor;
     } else {
@@ -131,6 +132,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     UIView *footer = [[UIView alloc] init];
+    footer.userInteractionEnabled = NO;
     if (self.sectionFooterColor) {
         footer.backgroundColor = self.sectionFooterColor;
     } else {
