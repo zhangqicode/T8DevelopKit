@@ -17,7 +17,7 @@
     if (self) {
         self.cell = [[T8MenuFunctionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         self.cell.selectedBackgroundView = [[UIView alloc] initWithFrame:self.cell.frame];
-        self.cell.selectedBackgroundView.backgroundColor = UIColorRGB(0xD9D9D9);
+        self.cell.selectedBackgroundView.backgroundColor = CellHighlightedBgColor;
         
         ((T8MenuFunctionCell *)self.cell).titleLabel.text = title;
     }

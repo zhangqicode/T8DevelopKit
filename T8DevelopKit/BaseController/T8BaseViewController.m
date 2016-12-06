@@ -19,14 +19,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = UIColorRGB(0xECECEC);
+    self.view.backgroundColor = AppBgColor;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.appearing = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    self.appearing = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -36,12 +41,15 @@
     //  设置backBarButtonItem
     //  首先判断有没有设置VC的title属性，要是设置了就直接用；否则，看看是不是设置了navigationItem的title属性，要是设置了就用；否则，就不设置backBarButtonItem了。不设置的话就会自动用系统自己的，backBarButtonItem的title为“返回”。
     NSString *title = self.title;
+    title = @" ";
     if (!title || title.length <= 0) {
         title = self.navigationItem.title;
     }
     if (title && title.length > 0) {
         [self setBackBarButtonItem:[T8BaseViewController navigationBackButtonItemWithTarget:self action:@selector(popViewController) title:title]];
     }
+    
+    self.appearing = NO;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -168,9 +176,11 @@
 
 + (UIBarButtonItem *)customNavigationBackButtonItemWithTarget:(id)target action:(SEL)action title:(NSString *)title
 {
+    title = @" ";
+    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-
+    
     if (title.length && title.length <= 4) {
         [backButton setTitle:title forState:UIControlStateNormal];
         backButton.frame = CGRectMake(0, 0, 60, 44);
@@ -180,9 +190,10 @@
     }
     [backButton setTitleColor:UIColorRGB(0x929292) forState:UIControlStateNormal];
     [backButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
-
+    
     [backButton setImage:[[UIImage imageNamed:@"back_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    [backButton setImageEdgeInsets:UIEdgeInsetsMake(-2, 6, 2, 0)];
     
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     return backButtonItem;

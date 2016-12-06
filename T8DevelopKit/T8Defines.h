@@ -34,4 +34,54 @@ return __singleton__; \
 #define UIColorRGB(rgb) ([[UIColor alloc] initWithRed:(((rgb >> 16) & 0xff) / 255.0f) green:(((rgb >> 8) & 0xff) / 255.0f) blue:(((rgb) & 0xff) / 255.0f) alpha:1.0f])
 #define UIColorRGBA(rgb,a) ([[UIColor alloc] initWithRed:(((rgb >> 16) & 0xff) / 255.0f) green:(((rgb >> 8) & 0xff) / 255.0f) blue:(((rgb) & 0xff) / 255.0f) alpha:a])
 
+
+//#if TARGET == 0 //  风利
+//#ifndef AppMainColor
+//#define AppMainColor                UIColorRGB(0x04C9BF)
+//#endif
+//#ifndef AppBgColor
+//#define AppBgColor                  UIColorRGB(0xECECEC)
+//#endif
+//#ifndef NavBarBgColor
+//#define NavBarBgColor               UIColorRGB(0xF9F9F9)
+//#endif
+//#ifndef MainContentColor
+//#define MainContentColor            UIColorRGB(0x929292)
+//#endif
+//#ifndef TabBarColor
+//#define TabBarColor                 UIColorRGB(0xF9F9F9)
+//#endif
+//#ifndef SeparatorColor
+//#define SeparatorColor              UIColorRGB(0xE0E0E0)
+//#endif
+//#ifndef PlaceHolderColor
+//#define PlaceHolderColor      UIColorRGB(0xBBBBBB)
+//#endif
+//#elif TARGET == 1   //  新生大学
+#ifndef AppMainColor
+#define AppMainColor                UIColorRGB(0x2ABA66)
+#endif
+#ifndef AppBgColor
+#define AppBgColor                  UIColorRGB(0xF7F7F7)
+#endif
+#ifndef NavBarBgColor
+#define NavBarBgColor               UIColorRGB(0xFFFFFF)
+#endif
+#ifndef MainContentColor
+#define MainContentColor            UIColorRGB(0x333333)
+#endif
+#ifndef TabBarColor
+#define TabBarColor                 UIColorRGB(0xFEFEFE)
+#endif
+#ifndef SeparatorColor
+#define SeparatorColor              UIColorRGB(0xD5D5D5)
+#endif
+#ifndef PlaceHolderColor
+#define PlaceHolderColor      UIColorRGB(0xBBBBBB)
+#endif
+#ifndef CellHighlightedBgColor
+#define CellHighlightedBgColor      UIColorRGB(0xE6E6E6)
+#endif
+//#endif
+
 #endif

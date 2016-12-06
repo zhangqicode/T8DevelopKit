@@ -34,11 +34,16 @@
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.backgroundColor = AppBgColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [[UIView alloc] init];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.backgroundView = nil;
+        _tableView.backgroundView = [[UIView alloc] init];
+        _tableView.backgroundView.backgroundColor = AppBgColor;
+        _tableView.separatorColor = SeparatorColor;
+        _tableView.sectionIndexBackgroundColor = [UIColor clearColor];
     }
     return _tableView;
 }
@@ -149,11 +154,11 @@
 -(void)viewDidLayoutSubviews
 {
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,12,0,0)];
     }
     
     if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,12,0,0)];
     }
 }
 

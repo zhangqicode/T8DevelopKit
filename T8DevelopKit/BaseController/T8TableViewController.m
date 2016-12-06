@@ -8,6 +8,7 @@
 
 #import "T8TableViewController.h"
 #import "SVPullToRefresh.h"
+#import "T8Defines.h"
 
 @interface T8TableViewController ()
 
@@ -65,6 +66,7 @@
     self.tableView.dataSource = self;
     self.showPullToRefresh = NO;     // default is NO
     self.showInfiniteScrolling = NO; // default is NO
+    self.tableView.separatorColor = SeparatorColor;
     
     self.currentPage = 1;
     self.limit = 12;
@@ -84,12 +86,12 @@
         _tableView.tableFooterView = view;
         
         if (_tableViewStyle == UITableViewStylePlain) {
-            if ([_tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-                [_tableView setSeparatorInset:UIEdgeInsetsZero];
-            }
-            if ([_tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-                [_tableView setLayoutMargins:UIEdgeInsetsZero];
-            }
+            [_tableView setSeparatorInset:_separatorInset];
+            [_tableView setLayoutMargins:_layoutMargins];
+        }
+        
+        if ([_tableView respondsToSelector:@selector(setCellLayoutMarginsFollowReadableWidth:)]) {
+            _tableView.cellLayoutMarginsFollowReadableWidth = NO;
         }
     }
     return _tableView;
@@ -140,11 +142,11 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsZero];
+        [cell setSeparatorInset:_separatorInset];
     }
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
+        [cell setLayoutMargins:_layoutMargins];
     }
 }
 

@@ -14,6 +14,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
+        self.selectedBackgroundView.backgroundColor = CellHighlightedBgColor;
+        
         [self addSubview:self.topLine];
         [self addSubview:self.bottomLine];
         

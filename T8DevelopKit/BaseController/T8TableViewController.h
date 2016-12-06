@@ -19,6 +19,9 @@
 @property (nonatomic) UITableViewStyle tableViewStyle;
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, assign) UIEdgeInsets separatorInset;
+@property (nonatomic, assign) UIEdgeInsets layoutMargins;
+
 @property (nonatomic, assign) BOOL showPullToRefresh;
 @property (nonatomic, assign) BOOL showInfiniteScrolling;
 
