@@ -188,7 +188,7 @@
         [backButton setTitle:@"返回" forState:UIControlStateNormal];
         backButton.frame = CGRectMake(0, 0, 60, 44);
     }
-    [backButton setTitleColor:UIColorRGB(0x929292) forState:UIControlStateNormal];
+    [backButton setTitleColor:AssistContentColor forState:UIControlStateNormal];
     [backButton.titleLabel setFont:[UIFont systemFontOfSize:16]];
     
     [backButton setImage:[[UIImage imageNamed:@"back_button"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];

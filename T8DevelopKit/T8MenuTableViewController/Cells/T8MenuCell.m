@@ -57,7 +57,7 @@
 {
     if (!_topLine) {
         _topLine = [[UIImageView alloc] init];
-        _topLine.backgroundColor = UIColorRGB(0xe6e6e6);
+        _topLine.backgroundColor = SeparatorColor;
         _topLine.hidden = YES;
     }
     return _topLine;
@@ -67,7 +67,7 @@
 {
     if (!_bottomLine) {
         _bottomLine = [[UIImageView alloc] init];
-        _bottomLine.backgroundColor = UIColorRGB(0xe6e6e6);
+        _bottomLine.backgroundColor = SeparatorColor;
         _bottomLine.hidden = YES;
     }
     return _bottomLine;
