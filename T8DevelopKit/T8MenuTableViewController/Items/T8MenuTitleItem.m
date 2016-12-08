@@ -30,7 +30,10 @@
         self.cell.selectedBackgroundView.backgroundColor = CellHighlightedBgColor;
         ((T8MenuTitleCell *)self.cell).titleLabel.text = title;
         if (indicator) {
-            self.cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            UIImageView *accesoryView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+            [accesoryView setImage:[UIImage imageNamed:@"public_ic_details"]];
+            self.cell.accessoryView = accesoryView;
+            
             [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.right.equalTo(self.cell.contentView);
                 make.centerY.equalTo(self.cell.contentView);
@@ -83,13 +86,16 @@
 - (void)setIndicator:(BOOL)indicator
 {
     if (indicator) {
-        self.cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UIImageView *accesoryView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+        [accesoryView setImage:[UIImage imageNamed:@"public_ic_details"]];
+        self.cell.accessoryView = accesoryView;
+        
         [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.cell.contentView);
             make.centerY.equalTo(self.cell.contentView);
         }];
     }else{
-        self.cell.accessoryType = UITableViewCellAccessoryNone;
+        self.cell.accessoryView = nil;
         [((T8MenuTitleCell *)self.cell).subTitleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.cell.contentView).offset(-20);
             make.centerY.equalTo(self.cell.contentView);

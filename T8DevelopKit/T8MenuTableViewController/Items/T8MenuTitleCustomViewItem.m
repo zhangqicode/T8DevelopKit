@@ -21,7 +21,10 @@
         T8MenuTitleCustomViewCell *cell = (T8MenuTitleCustomViewCell *)self.cell;
         cell.titleLabel.text = title;
         if (indicator) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            UIImageView *accesoryView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+            [accesoryView setImage:[UIImage imageNamed:@"public_ic_details"]];
+            self.cell.accessoryView = accesoryView;
+
         }
         [self setCustomView:customView];
     }
