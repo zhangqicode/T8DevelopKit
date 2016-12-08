@@ -88,22 +88,22 @@
     if (!self.shouldCustomCellTopLineAndBottomLineDisplay) {
         if (indexPath.row==0) {
             if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
-                if (sectionArr.count>1) {
-                    [cell showTopLine:NO bottomLine:YES];
-                }else{
+                [cell showTopLine:NO bottomLine:NO];
+            } else {
+                if (sectionArr.count == 1) {
                     [cell showTopLine:NO bottomLine:NO];
+                } else {
+                    [cell showTopLine:NO bottomLine:YES];
                 }
-            }else{
-                [cell showTopLine:YES bottomLine:YES];
             }
         }else if (indexPath.row==sectionArr.count-1) {
+            [cell showTopLine:NO bottomLine:NO];
+        }else{
             if ([cell isMemberOfClass:[T8MenuDescriptionCell class]]) {
                 [cell showTopLine:NO bottomLine:NO];
-            }else{
+            } else {
                 [cell showTopLine:NO bottomLine:YES];
             }
-        }else{
-            [cell showTopLine:NO bottomLine:YES];
         }
     }
     
