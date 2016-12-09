@@ -21,8 +21,16 @@
         T8MenuTitleCustomViewCell *cell = (T8MenuTitleCustomViewCell *)self.cell;
         cell.titleLabel.text = title;
         if (indicator) {
-            UIImageView *accesoryView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
-            [accesoryView setImage:[UIImage imageNamed:@"public_ic_details"]];
+            UIView *accesoryView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 18, 18)];
+            UIImageView *accesoryImageView = [[UIImageView alloc]init];
+            [accesoryImageView setImage:[UIImage imageNamed:@"public_ic_details"]];
+            [accesoryView addSubview:accesoryImageView];
+            [accesoryImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(accesoryView);
+                make.left.equalTo(accesoryView).offset(6);
+                make.width.equalTo(@18);
+                make.height.equalTo(@18);
+            }];
             self.cell.accessoryView = accesoryView;
 
         }
