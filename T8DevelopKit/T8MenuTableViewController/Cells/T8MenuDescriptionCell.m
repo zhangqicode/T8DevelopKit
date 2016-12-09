@@ -32,7 +32,7 @@
     if (!_descriptionLabel) {
         _descriptionLabel = [[UILabel alloc] init];
         _descriptionLabel.font = [UIFont systemFontOfSize:14];
-        _descriptionLabel.textColor = UIColorRGB(0xa0a9ae);
+        _descriptionLabel.textColor = AssistContentColor;
         _descriptionLabel.numberOfLines = 0;
     }
     return _descriptionLabel;
