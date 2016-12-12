@@ -62,7 +62,7 @@
 {
     T8MenuTitleCustomViewCell *cell = (T8MenuTitleCustomViewCell *)self.cell;
     cell.customView = customView;
-    if (cell.accessoryType == UITableViewCellAccessoryDisclosureIndicator) {
+    if (cell.accessoryView) {
         [cell.customView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.cell.contentView);
             make.centerY.equalTo(self.cell.contentView);
