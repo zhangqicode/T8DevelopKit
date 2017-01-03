@@ -13,6 +13,7 @@
 
 + (UIWindow *)getTopWindow;
 + (void)showHUDMessage:(NSString *)message;
++ (void)showHUDMessage:(NSString *)message lineWrap:(BOOL)lineWrap;
 + (void)showHUDMessage:(NSString *)message detail:(NSString *)detail;
 + (void)showHUDImage:(NSString *)imageName;
 + (void)showHudMessage:(NSString *)message image:(NSString *)imageName;

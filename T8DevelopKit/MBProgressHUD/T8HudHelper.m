@@ -36,6 +36,22 @@
     [hud showWhileExecuting:@selector(delayTask) onTarget:self withObject:nil animated:YES];
 }
 
++ (void)showHUDMessage:(NSString *)detail lineWrap:(BOOL)lineWrap
+{
+    if (!lineWrap) {
+        [T8HudHelper showHUDMessage:detail];
+    } else {
+        UIWindow *window = [T8HudHelper getTopWindow];
+        MBProgressHUD *hud = [[MBProgressHUD alloc]initWithView:window];
+        [window addSubview:hud];
+        hud.removeFromSuperViewOnHide = YES;
+        hud.detailsLabelText = detail.length == 0?@"未知错误":detail;
+        hud.detailsLabelFont = [UIFont systemFontOfSize:16.0];
+        hud.mode = MBProgressHUDModeText;
+        [hud showWhileExecuting:@selector(delayTask) onTarget:self withObject:nil animated:YES];
+    }
+}
+
 + (void)showHUDMessage:(NSString *)message detail:(NSString *)detail
 {
     UIWindow *window = [T8HudHelper getTopWindow];
