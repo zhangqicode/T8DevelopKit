@@ -18,11 +18,23 @@
 #define D_WEEK		604800
 #define D_YEAR		31556926
 
+
+@interface T8DateMonitor : NSObject
+
++ (T8DateMonitor *)sharedMonitor;
+
+- (void)startMonitorWithMonitorBlock:(void (^)())monitorBlock;
+- (void)stopMonitor;
+
+@end
+
 @interface NSDate (T8)
 
 - (NSString *)timeIntervalDescription;//距离当前的时间间隔描述
 - (NSString *)minuteDescription;/*精确到分钟的日期描述*/
 - (NSString *)formattedTime;
+//  type = 0：用于消息；type = 1：用户聊天列表
+- (NSString *)formattedTimeWithType:(NSInteger)type;
 - (NSString *)formattedDateDescription;//格式化日期描述
 - (double)timeIntervalSince1970InMilliSecond;
 + (NSDate *)dateWithTimeIntervalInMilliSecondSince1970:(double)timeIntervalInMilliSecond;
@@ -34,6 +46,7 @@
 // Relative dates from the current date
 + (NSDate *) dateTomorrow;
 + (NSDate *) dateYesterday;
++ (NSDate *) startOfToday;  //  今天的开始时间
 + (NSDate *) dateWithDaysFromNow: (NSInteger) days;
 + (NSDate *) dateWithDaysBeforeNow: (NSInteger) days;
 + (NSDate *) dateWithHoursFromNow: (NSInteger) dHours;

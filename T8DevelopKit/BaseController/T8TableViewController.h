@@ -19,6 +19,9 @@
 @property (nonatomic) UITableViewStyle tableViewStyle;
 @property (nonatomic, strong) UITableView *tableView;
 
+//  是否关闭tableView高度自动布局，默认开启
+@property (nonatomic, assign) BOOL disableAutoLayoutTableView;
+
 @property (nonatomic, assign) UIEdgeInsets separatorInset;
 @property (nonatomic, assign) UIEdgeInsets layoutMargins;
 

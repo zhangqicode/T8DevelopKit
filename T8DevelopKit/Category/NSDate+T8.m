@@ -17,6 +17,56 @@
 #define DATE_COMPONENTS (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
 
+
+typedef void(^T8MonitorBlock)();
+
+@interface T8DateMonitor ()
+
+@property (nonatomic, copy) T8MonitorBlock monitorBlock;
+
+@end
+
+@implementation T8DateMonitor
+
++ (T8DateMonitor *)sharedMonitor
+{
+    static T8DateMonitor *dateMonitor;
+    static dispatch_once_t onceTokenForDateMonitor;
+    dispatch_once(&onceTokenForDateMonitor, ^{
+        dateMonitor = [[T8DateMonitor alloc] init];
+    });
+    
+    return dateMonitor;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    _monitorBlock = nil;
+}
+
+- (void)startMonitorWithMonitorBlock:(void (^)())monitorBlock
+{
+    _monitorBlock = monitorBlock;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(actionForSystemClockDidChangeNotification:) name:NSSystemClockDidChangeNotification object:nil];
+}
+
+- (void)stopMonitor
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    _monitorBlock = nil;
+}
+
+- (void)actionForSystemClockDidChangeNotification:(NSNotification *)notification
+{
+    if (_monitorBlock) {
+        _monitorBlock();
+    }
+}
+
+@end
+
 @implementation NSDate (T8)
 
 /*距离当前的时间间隔描述*/
@@ -61,54 +111,44 @@
 	}
 }
 
-
-
 /*标准时间日期描述*/
 -(NSString *)formattedTime{
-    
+    return [self formattedTimeWithType:0];
+}
+
+- (NSString *)formattedTimeWithType:(NSInteger)type
+{
     //今天 0点时间
-    NSDate *date = [[NSDate date] dateAtStartOfDay];
+    NSDate *date = [NSDate startOfToday];
     
     NSInteger hour = [self hoursAfterDate:date];
     NSDateFormatter *dateFormatter = nil;
-    NSString *ret = @"";
-    
-    //hasAMPM==TURE为12小时制，否则为24小时制
-    NSString *formatStringForHours = [NSDateFormatter dateFormatFromTemplate:@"j" options:0 locale:[NSLocale currentLocale]];
-    NSRange containsA = [formatStringForHours rangeOfString:@"a"];
-    BOOL hasAMPM = containsA.location != NSNotFound;
-    
-    if (!hasAMPM) { //24小时制
-        if (hour <= 24 && hour >= 0) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"HH:mm"];
-        }else if (hour < 0 && hour >= -24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天 HH:mm"];
-        }else {
+    if (hour >= 0 && hour <= 6) {
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 HH:mm"];
+    }else if (hour > 6 && hour <=11 ) {
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午 hh:mm"];
+    }else if (hour > 11 && hour <= 12) {
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"中午 hh:mm"];
+    }else if (hour > 12 && hour <= 17) {
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午 hh:mm"];
+    }else if (hour > 17 && hour <= 24) {
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上 hh:mm"];
+    }else if (hour < 0 && hour >= -24){
+        dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天 HH:mm"];
+    }else  {
+        if (type == 1) {
+            if ([self isSameYearAsDate:date]) {
+                dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"M月dd日"];
+            } else {
+                dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy年M月dd日"];
+            }
+        } else {
             dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd HH:mm"];
         }
-    }else {
-        if (hour >= 0 && hour <= 6) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨 HH:mm"];
-        }else if (hour > 6 && hour <=11 ) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午 hh:mm"];
-        }else if (hour > 11 && hour <= 12) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"中午 hh:mm"];
-        }else if (hour > 12 && hour <= 17) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午 hh:mm"];
-        }else if (hour > 17 && hour <= 24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上 hh:mm"];
-        }else if (hour < 0 && hour >= -24){
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天 HH:mm"];
-        }else  {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd HH:mm"];
-        }
-        
     }
     
-    ret = [dateFormatter stringFromDate:self];
-    return ret;
+    return [dateFormatter stringFromDate:self];
 }
-
 
 /*格式化日期描述*/
 - (NSString *)formattedDateDescription
@@ -216,6 +256,21 @@
 + (NSDate *) dateYesterday
 {
 	return [NSDate dateWithDaysBeforeNow:1];
+}
+
++ (NSDate *) startOfToday
+{
+    static NSDate *startDate;
+    static dispatch_once_t onceTokenForStartOfToday;
+    dispatch_once(&onceTokenForStartOfToday, ^{
+        startDate = [[NSDate date] dateAtStartOfDay];
+        
+        [[T8DateMonitor sharedMonitor] startMonitorWithMonitorBlock:^{
+            startDate = [[NSDate date] dateAtStartOfDay];
+        }];
+    });
+    
+    return startDate;
 }
 
 + (NSDate *) dateWithHoursFromNow: (NSInteger) dHours

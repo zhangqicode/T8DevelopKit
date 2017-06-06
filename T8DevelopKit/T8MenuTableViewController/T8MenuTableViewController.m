@@ -9,6 +9,8 @@
 #import "T8MenuTableViewController.h"
 #import "T8Defines.h"
 #import "T8MenuDescriptionCell.h"
+#import "NSObject+T8KVO.h"
+
 
 @interface T8MenuTableViewController ()
 
@@ -16,12 +18,30 @@
 
 @implementation T8MenuTableViewController
 
+- (void)dealloc
+{
+    [self.view removeObserverBlocksForKeyPath:@"frame"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.view addSubview:self.tableView];
     
-    
+    if (!self.disableAutoLayoutTableView) {
+        __weak __typeof(self) weakSelf = self;
+        [self.view addObserverBlockForKeyPath:@"frame" block:^(id obj, NSValue *oldFrameValue, NSValue *newFrameValue){
+            if (newFrameValue) {
+                CGRect newFrame = [newFrameValue CGRectValue];
+                CGRect oldFrame = [oldFrameValue CGRectValue];
+                if (newFrame.size.height > 0 && newFrame.size.height != oldFrame.size.height) {
+                    CGRect tmpFrame = weakSelf.tableView.frame;
+                    tmpFrame.size.height = newFrame.size.height;
+                    weakSelf.tableView.frame = tmpFrame;
+                }
+            }
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

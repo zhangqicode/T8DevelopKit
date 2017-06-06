@@ -9,12 +9,19 @@
 #import "T8TableViewController.h"
 #import "SVPullToRefresh.h"
 #import "T8Defines.h"
+#import "NSObject+T8KVO.h"
+
 
 @interface T8TableViewController ()
 
 @end
 
 @implementation T8TableViewController
+
+- (void)dealloc
+{
+    [self.view removeObserverBlocksForKeyPath:@"frame"];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -71,6 +78,19 @@
     self.currentPage = 1;
     self.limit = 12;
     self.timestamp = 0.0f;
+    
+    if (!self.disableAutoLayoutTableView) {
+        __weak __typeof(self) weakSelf = self;
+        [self.view addObserverBlockForKeyPath:@"frame" block:^(id obj, NSValue *oldFrameValue, NSValue *newFrameValue){
+            if (newFrameValue) {
+                CGRect newFrame = [newFrameValue CGRectValue];
+                CGRect oldFrame = [oldFrameValue CGRectValue];
+                if (newFrame.size.height > 0 && newFrame.size.height != oldFrame.size.height) {
+                    weakSelf.tableView.frame = CGRectMake(0, 0, CGRectGetWidth(newFrame), CGRectGetHeight(newFrame));
+                }
+            }
+        }];
+    }
 }
 
 - (UITableView *)tableView
@@ -147,6 +167,21 @@
     
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:_layoutMargins];
+    }
+}
+
+
+#pragma mark - 
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"frame"] && [object isEqual:self.view]) {
+        NSValue *newFrameValue = [change objectForKey:NSKeyValueChangeNewKey];
+        if (newFrameValue) {
+            CGRect newFrame = [newFrameValue CGRectValue];
+            self.tableView.frame = CGRectMake(0, 0, CGRectGetWidth(newFrame), CGRectGetHeight(newFrame));
+        }
     }
 }
 

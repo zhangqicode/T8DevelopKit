@@ -21,4 +21,7 @@
 
 @property (nonatomic, assign) BOOL shouldCustomCellTopLineAndBottomLineDisplay;
 
+//  是否关闭tableView高度自动布局，默认开启
+@property (nonatomic, assign) BOOL disableAutoLayoutTableView;
+
 @end
