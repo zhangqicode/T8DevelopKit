@@ -22,6 +22,7 @@
 		6D177C671B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D177C661B43EBF800B3AE4D /* T8MenuTitleCustomViewItem.m */; };
 		6D25D9941B254C0300588FDF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9911B254C0300588FDF /* MBProgressHUD.m */; };
 		6D25D9951B254C0300588FDF /* T8HudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D25D9931B254C0300588FDF /* T8HudHelper.m */; };
+		6D3F916D1EE65ECD00D56747 /* NSObject+T8KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3F916C1EE65ECD00D56747 /* NSObject+T8KVO.m */; };
 		6D5C36851B3A58630015364D /* T8PlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36841B3A58630015364D /* T8PlaceHolderTextView.m */; };
 		6D5C36881B3A663F0015364D /* T8MenuTextViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C36871B3A663F0015364D /* T8MenuTextViewItem.m */; };
 		6D5C368B1B3A669B0015364D /* T8MenuTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D5C368A1B3A669B0015364D /* T8MenuTextViewCell.m */; };
@@ -106,6 +107,8 @@
 		6D25D9911B254C0300588FDF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		6D25D9921B254C0300588FDF /* T8HudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8HudHelper.h; sourceTree = "<group>"; };
 		6D25D9931B254C0300588FDF /* T8HudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8HudHelper.m; sourceTree = "<group>"; };
+		6D3F916B1EE65ECD00D56747 /* NSObject+T8KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+T8KVO.h"; sourceTree = "<group>"; };
+		6D3F916C1EE65ECD00D56747 /* NSObject+T8KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+T8KVO.m"; sourceTree = "<group>"; };
 		6D5C36831B3A58630015364D /* T8PlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8PlaceHolderTextView.h; sourceTree = "<group>"; };
 		6D5C36841B3A58630015364D /* T8PlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T8PlaceHolderTextView.m; sourceTree = "<group>"; };
 		6D5C36861B3A663F0015364D /* T8MenuTextViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T8MenuTextViewItem.h; sourceTree = "<group>"; };
@@ -464,6 +467,8 @@
 				42D03BB91B43EDA00076FF1A /* UIActionSheet+T8.m */,
 				42D03BBB1B43F7500076FF1A /* UIAlertView+T8.h */,
 				42D03BBC1B43F7500076FF1A /* UIAlertView+T8.m */,
+				6D3F916B1EE65ECD00D56747 /* NSObject+T8KVO.h */,
+				6D3F916C1EE65ECD00D56747 /* NSObject+T8KVO.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 				6DB7F74B1B68BB65006AA9E4 /* T8BaseTableViewCell.m in Sources */,
 				6DB9494E1B4A4F3F00C2B83A /* T8MenuFunctionItem.m in Sources */,
 				6D8E21081B33EF1C005BC0F5 /* T8MenuCell.m in Sources */,
+				6D3F916D1EE65ECD00D56747 /* NSObject+T8KVO.m in Sources */,
 				6D0833061C5F96BF00EDC6F0 /* T8MenuCustomCell.m in Sources */,
 				6DC396A11B1C82EA00270D0D /* UIImage+T8.m in Sources */,
 				6DB7F7491B68BB65006AA9E4 /* T8ATBCell.m in Sources */,
