@@ -159,7 +159,7 @@ typedef void(^T8MonitorBlock)();
     
     NSInteger timeInterval = -[self timeIntervalSinceNow];
     if (timeInterval < 60) {
-        return @"1分钟内";
+        return @"刚刚";
 	} else if (timeInterval < 3600) {//1小时内
         return [NSString stringWithFormat:@"%d分钟前", timeInterval / 60];
 	} else if (timeInterval < 21600) {//6小时内
