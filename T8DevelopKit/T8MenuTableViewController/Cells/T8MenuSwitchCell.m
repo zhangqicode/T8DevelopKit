@@ -36,7 +36,6 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont systemFontOfSize:17];
-//        _titleLabel.textColor = UIColorRGB(0x222222);
     }
     return _titleLabel;
 }
@@ -45,6 +44,7 @@
 {
     if (!_switchItem) {
         _switchItem = [[UISwitch alloc] init];
+        _switchItem.onTintColor = UIColorRGB(0x5E7EFF);
     }
     return _switchItem;
 }
