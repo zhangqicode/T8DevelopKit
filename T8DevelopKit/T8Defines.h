@@ -60,9 +60,6 @@ return __singleton__; \
 #ifndef PlaceHolderColor
 #define PlaceHolderColor      UIColorRGB(0xBBBBBB)
 #endif
-#ifndef HighlightedAppMainColor
-#define HighlightedAppMainColor            UIColorRGB(0x1B9D52)
-#endif
 #ifndef HighlightedWhiteColor
 #define HighlightedWhiteColor            UIColorRGB(0xD9D9D9)
 #endif
