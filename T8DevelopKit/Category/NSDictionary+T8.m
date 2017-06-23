@@ -28,7 +28,7 @@
 
 -(CGFloat)floatForKey:(NSString *)key withDefault:(CGFloat)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] floatValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]] ? [[self objectForKey:key] floatValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
@@ -37,7 +37,7 @@
 
 -(NSTimeInterval)timeIntervalForKey:(NSString *)key withDefault:(NSTimeInterval)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] doubleValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]]? [[self objectForKey:key] doubleValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
@@ -46,7 +46,7 @@
 
 -(NSInteger)intForKey:(NSString *)key withDefault:(NSInteger)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] integerValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]]? [[self objectForKey:key] integerValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
@@ -55,7 +55,7 @@
 
 -(long long)longLongForKey:(NSString *)key withDefault:(long long)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] longLongValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]] ? [[self objectForKey:key] longLongValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
@@ -64,7 +64,7 @@
 
 -(long)longForKey:(NSString *)key withDefault:(long)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] longValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]] ? [[self objectForKey:key] longValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
@@ -73,7 +73,7 @@
 
 -(int)intValueForKey:(NSString *)key withDefault:(int)defVal{
     @try {
-        return [self objectForKey:key] != nil? [[self objectForKey:key] intValue] : defVal;
+        return [self objectForKey:key] != nil && ![[self objectForKey:key] isEqual:[NSNull null]] ? [[self objectForKey:key] intValue] : defVal;
     }
     @catch (NSException *exception) {
         return defVal;
