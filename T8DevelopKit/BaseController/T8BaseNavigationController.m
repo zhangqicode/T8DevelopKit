@@ -24,6 +24,10 @@
         self.navigationBar.titleTextAttributes = titleTextAttributes;
         [self.navigationBar setBarTintColor:NavBarBgColor];
         self.navigationBar.tintColor = MainContentColor;
+        
+        UIView *bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationBar.bounds.size.height, SCREEN_WIDTH, 0.5)];
+        bottomLine.backgroundColor = UIColorRGB(0xF0F0F2);
+        [self.navigationBar addSubview:bottomLine];
     }
     
     return self;
