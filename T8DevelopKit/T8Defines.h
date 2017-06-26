@@ -24,8 +24,8 @@ dispatch_once( &once, ^{ __singleton__ = [[self alloc] init]; } ); \
 return __singleton__; \
 }
 
-#define PCScaleWidth375(x)      (x / 375.0 * SCREEN_WIDTH)
-#define PCScaleHeight667(y)     (y / 667.0 * SCREEN_HEIGHT)
+#define PCScaleWidth375(x)      (x / 375.0 * DEVICE_WIDTH)
+#define PCScaleHeight667(y)     (y / 667.0 * DEVICE_HEIGHT)
 
 //屏幕宽度
 #define SCREEN_WIDTH ([[UIScreen mainScreen]bounds].size.width)
