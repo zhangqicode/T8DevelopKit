@@ -27,7 +27,7 @@
 
 - (CGFloat)itemHeight
 {
-    return 45;
+    return 56;
 }
 
 #pragma mark - method
