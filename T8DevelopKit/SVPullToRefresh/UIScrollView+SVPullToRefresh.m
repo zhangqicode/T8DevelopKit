@@ -177,9 +177,7 @@ static char UIScrollViewPullToRefreshView;
         self.state = SVPullToRefreshStateStopped;
         self.showsDateLabel = NO;
         
-        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"Pull to refresh...",),
-                       NSLocalizedString(@"Release to refresh...",),
-                       NSLocalizedString(@"Loading...",),
+        self.titles = [NSMutableArray arrayWithObjects:@"", @"", @"",
                        nil];
         
         self.subtitles = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", nil];
@@ -441,7 +439,7 @@ static char UIScrollViewPullToRefreshView;
     if(!_arrow) {
         _arrow = [[SVPullToRefreshArrow alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-54, 22, 48)];
         _arrow.backgroundColor = [UIColor clearColor];
-        [self addSubview:_arrow];
+//        [self addSubview:_arrow];
     }
     return _arrow;
 }
